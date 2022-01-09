@@ -6,13 +6,13 @@ TESTS_PATH				= tests/
 SHELL					= bash
 
 
-MANDATORY_HEADER		= ../get_next_line.h
-MANDATORY_FILES			= ../get_next_line.c ../get_next_line_utils.c
-MANDATORY_OBJS			= $(MANDATORY_FILES:../%.c=%.o)
+MANDATORY_HEADER		= ../../src/get_next_line.h
+MANDATORY_FILES			= ../../src/get_next_line.c ../../src/get_next_line_utils.c
+MANDATORY_OBJS			= $(MANDATORY_FILES:../../src/%.c=%.o)
 
-BONUS_HEADER			= ../get_next_line_bonus.h
-BONUS_FILES				= ../get_next_line_bonus.c ../get_next_line_utils_bonus.c
-BONUS_OBJS				= $(BONUS_FILES:../%.c=%.o)
+BONUS_HEADER			= ../../src/get_next_line_bonus.h
+BONUS_FILES				= ../../src/get_next_line_bonus.c ../../src/get_next_line_utils_bonus.c
+BONUS_OBJS				= $(BONUS_FILES:../../src/%.c=%.o)
 
 MANDATORY				= mandatory
 1MANDATORY				= $(addprefix 1, $(MANDATORY))
