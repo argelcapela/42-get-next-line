@@ -49,7 +49,7 @@ for test_size in $BUF_SIZE_TESTS; do
     fi
 
     # compile
-    ./compile.sh $test_size $GET_NEXT_LINE_FOLDER $BONUS $FILEONE $FILETWO
+     bash compile.sh $test_size $GET_NEXT_LINE_FOLDER $BONUS $FILEONE $FILETWO
     if [ ! $? -eq 0 ]; then
         exit $?
     fi

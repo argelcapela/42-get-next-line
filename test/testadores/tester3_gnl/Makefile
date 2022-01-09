@@ -1,4 +1,4 @@
-PATH_GNL = ..
+PATH_GNL = ../../../src/
 
 NAME = gnl_out
 NAME_SUB = run_out
