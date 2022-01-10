@@ -14,6 +14,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 
 // Function Protoctypes of file get_next_line.c
 char	*get_next_line(int fd);
-char	*get_line_hold_rest(int fd, char **rest);
+char	*get_line_hold_rest(int fd, char **rest, ssize_t *result, char **buffer);
 
 #endif
