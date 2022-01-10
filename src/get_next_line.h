@@ -7,7 +7,7 @@
 
 // Function Protoctypes of file get_next_line.c
 char	*get_next_line(int fd);
-
+char	*get_line_cut_rest(int fd);
 
 // Function Protoctypes of file get_next_line_utils.c
 

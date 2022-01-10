@@ -5,9 +5,7 @@
  * COMPILE AND EXECUTE DIRECT OF THIS CURRENT DIRECTORY
    ALSO DELETE .GCH file
 
-gcc -D BUFFER_SIZE=2 ../src/get_next_line.h ../src/get_next_line_utils.c ../src/get_next_line.c main.c && rm ../src/*.gch 
-&& ./a.exe|out
-
+clear && gcc -Wall -Wextra -Werror -D BUFFER_SIZE=2 ../src/get_next_line.h ../src/get_next_line_utils.c ../src/get_next_line.c main.c && rm ../src/*.gch && ./a.out && valgrind --leak-check=full ./a.out
  */
 
 
