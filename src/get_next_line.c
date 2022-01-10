@@ -1,7 +1,6 @@
 #include "get_next_line.h"
 #include <string.h>
 
-
 char	*get_next_line(int fd)
 {	
 // auxiliary vars
@@ -9,15 +8,22 @@ char	*get_next_line(int fd)
 	char *buffer;
 	ssize_t result;
 // check fd
-	if(!read(fd, buffer, BUFFER_SIZE))
+	if(read(fd, buffer, BUFFER_SIZE) < 0)
 		return (NULL);
-// return until \n & hold rest
-	return (get_line_hold_rest(fd));
+// return line until \n & hold rest
+	return (get_line_hold_rest(fd, &rest));
 }
 
-char	*get_line_cut_rest(int fd)
+char	*get_line_cut_rest(int fd, char **rest)
 {
-	
+	if()
+	{
+
+	}
+	else
+	{
+		
+	}
 }
 
 
