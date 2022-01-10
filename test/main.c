@@ -14,8 +14,11 @@ clear && gcc -D BUFFER_SIZE=2 ../src/get_next_line.h ../src/get_next_line_utils.
 int main(void)
 {
 	// testing mandatory
-	int lyric1 = open("files/enemy", O_RDONLY);
+	int lyric1 = open("files/41_with_nl", O_RDONLY);
 	printf("%s", get_next_line(lyric1));
+	//printf("%s", get_next_line(lyric1));
+	//printf("%s", get_next_line(lyric1));
+	//get_next_line(lyric1);
 
 	return(0);
 }
