@@ -1,5 +1,4 @@
 #include "get_next_line.h"
-#include <string.h>
 
 char	*get_next_line(int fd)
 {	
@@ -14,7 +13,7 @@ char	*get_next_line(int fd)
 	return (get_line_hold_rest(fd, &rest));
 }
 
-char	*get_line_cut_rest(int fd, char **rest)
+char	*get_line_hold_rest(int fd, char **rest)
 {
 	if()
 	{
@@ -22,8 +21,9 @@ char	*get_line_cut_rest(int fd, char **rest)
 	}
 	else
 	{
-		
+
 	}
+	return ("teste");
 }
 
 
