@@ -1,38 +1,38 @@
 #include "get_next_line.h"
 
 char	*get_next_line(int fd)
-{	
+{
 // auxiliary vars
 	static char *rest;
-	char *buffer;
+	char buffer[BUFFER_SIZE + 1];
 	ssize_t result;
+// check fd
+	if(read(fd, buffer, 0) < 0)
+		return (NULL);
 // init vars
 	if(rest == 0)
 		rest = ft_strdup("");
 	result = read(fd, buffer, BUFFER_SIZE);
-// check fd
-	if(read(fd, buffer, BUFFER_SIZE) < 0)
-		return (NULL);
+	buffer[BUFFER_SIZE] = '\0';
 // return line until \n & hold rest
-	return (get_line_hold_rest(fd, &rest, &result, &buffer));
+	return (get_line_hold_rest(fd, &rest, result, &buffer[0]));
 }
 
-char	*get_line_hold_rest(int fd, char **rest, ssize_t *result, char **buffer)
-{
-	if(result == 0)
-		return (NULL);	
+char	*get_line_hold_rest(int fd, char **rest, ssize_t result, char *buffer){
+// recursion line until \n
+	if(ft_strrchr(*rest, '\n'))
+	{
+		return (NULL);
+	}
 	else
 	{
-		return (*rest);
-
-
-	}	
+		if(result > 0)
+		{
+			*rest = ft_strjoin(*rest, buffer);
+			get_line_hold_rest(fd, rest, read(fd, buffer, BUFFER_SIZE) , buffer);
+		}
+		else
+			return (NULL);
+	}
+	return (*rest);
 }
-
-
-
-/*
-
-01234567890123456789012345678901234567890\n01234567890123456789012345678901234567890z\n
-
-*/
