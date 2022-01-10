@@ -34,7 +34,8 @@ char	*get_next_line(int fd)
 	result = read(fd, buffer, BUFFER_SIZE);
 	buffer[BUFFER_SIZE] = '\0';
 // return line until \n & hold rest
-	return (get_line_hold_rest(fd, &rest, result, &buffer[0]));
+	char *teste = get_line_hold_rest(fd, &rest, result, &buffer[0]);
+	return (teste);
 }
 
 
