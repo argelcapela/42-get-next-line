@@ -1,6 +1,6 @@
 #include "get_next_line.h"
 
-char	*ft_strrchr(const char *str, int ch, char **rest)
+char	*ft_strrchr(const char *str, int ch)
 {
 	int	j;
 
