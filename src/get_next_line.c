@@ -11,30 +11,24 @@ int index_last_bn(char *str)
 }
 
 char	*get_line_hold_rest(int fd, char **rest, ssize_t result, char *buffer){
-// auxiliary vars
-	char *line;
-	int len;
 // recursion line until \n
-	buffer[BUFFER_SIZE] = '\0';
 	*rest = ft_strjoin(*rest, buffer);
 	if(ft_strrchr(*rest, '\n')) // 1) verificar se tem \n no *rest
 	{
+		// auxiliary vars
+			char *line;
+			int len;
 		// 2) retorna a linha do começo, ignorando caracteres não printavéis, até o barra\n
 			len = index_last_bn(*rest);
 			line = ft_substr(*rest, 0, len + 1);
 		// 3) pega o *rest e atribuí a ele um ponteiro, apontando para o primeiro caracter depois do \n
 			*rest = ft_strdup(&(rest[0][len + 1]));
-		return (line);
+			return (line);
 	}
 	else if(result == 0)
-	{
-		return (0);
-	}
-	else
-	{
-		result = read(fd, buffer, BUFFER_SIZE);
-		get_line_hold_rest(fd, rest, result, &buffer[0]);
-	}
+		return (NULL);
+
+	return (get_line_hold_rest(fd, rest, read(fd, buffer, BUFFER_SIZE), &buffer[0]));
 }
 
 char	*get_next_line(int fd)
@@ -43,7 +37,6 @@ char	*get_next_line(int fd)
 	static char *rest;
 	char buffer[BUFFER_SIZE + 1];
 	ssize_t result;
-	char *line;
 // check fd
 	//if(read(fd, buffer, 0) < 0)
 		//return (NULL);
