@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *str, int ch)
 	return (NULL);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t		i;
 	size_t		f;
@@ -42,6 +42,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	str[i] = '\0';
+	free(s1);
+	s1 = NULL;
 	return (str);
 }
 

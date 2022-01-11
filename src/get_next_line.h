@@ -8,7 +8,7 @@
 
 // Function Protoctypes of file get_next_line_utils.c
 char	*ft_strrchr(const char *str, int ch);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(char const *str);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
