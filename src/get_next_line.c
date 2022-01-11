@@ -13,20 +13,13 @@ char	*get_next_line(int fd)
 // check fd
 	if(read(fd, buffer, BUFFER_SIZE) < 0)
 		return (NULL);
-// return line until \n & hold rest
+// return line until \n & hold rest 
 	return (get_line_hold_rest(fd, &rest, &result, &buffer));
 }
 
 char	*get_line_hold_rest(int fd, char **rest, ssize_t *result, char **buffer)
 {
-	if(result == 0)
-		return (NULL);	
-	else
-	{
-		return (*rest);
-
-
-	}	
+	return (*buffer);
 }
 
 
