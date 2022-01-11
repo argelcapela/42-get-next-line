@@ -87,9 +87,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	while (len > 0 && *s)
 	{
-		*new++ = *s++;
+		if(*s == '\r')
+			*s++;
+		else
+			*new++ = *s++;
 		len--;
 	}
-	*new = 0;
+	*new = '\0';
 	return (temp);
 }

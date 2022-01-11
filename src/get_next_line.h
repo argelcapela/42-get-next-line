@@ -16,5 +16,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 // Function Protoctypes of file get_next_line.c
 char	*get_next_line(int fd);
 char	*get_line_hold_rest(int fd, char **rest, ssize_t result, char *buffer);
+int		index_last_bn(char *str);
 
 #endif
