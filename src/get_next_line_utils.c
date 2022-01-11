@@ -73,21 +73,26 @@ char	*ft_strdup(const char *s)
 	return (strd);
 }
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char	*new;
+	char	*temp;
 
-	i = 0;
-	if (!dest && !src && !size)
-		return (0);
-	if (size > 0)
+	new = malloc(len + 1);
+	temp = new;
+	while (start > 0)
 	{
-		while (i < size - 1 && src[i])
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		s++;
+		start--;
 	}
-	return (ft_strlen(src));
+	while (len > 0 && *s)
+	{
+		if(*s == '\r')
+			*s++;
+		else
+			*new++ = *s++;
+		len--;
+	}
+	*new = '\0';
+	return (temp);
 }
