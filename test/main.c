@@ -17,19 +17,20 @@ int main(void)
 	int lyric1 = open("files/legends", O_RDONLY);
 
 
-	printf("%s", get_next_line(lyric1));
-	printf("%s", get_next_line(lyric1));
-	printf("%s", get_next_line(lyric1));
+
+	//printf("%s", get_next_line(lyric1));
+	//printf("%s", get_next_line(lyric1));
 	//printf("%s", get_next_line(lyric1));
 	//get_next_line(lyric1);
 
-	/*int i = 0;
-	while(i < 45)
+	int i = 0;
+	while(i < 47)
 	{
-		printf("%s", get_next_line(lyric1));
+		char *resposta = get_next_line(lyric1);
+		printf("%s", resposta);
+		free(resposta);
 		i++;
-	}*/
-
+	}
 
 	return(0);
 }
