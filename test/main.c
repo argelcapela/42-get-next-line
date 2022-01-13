@@ -18,7 +18,7 @@ int main(void)
 
 
 	int i = 0;
-	while(i < 5)
+	while(i < 6)
 	{
 		char *resposta = get_next_line(lyric1);
 		printf("%s", resposta);
