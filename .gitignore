@@ -1,0 +1,3 @@
+test/*.out
+test/*.exe
+src/gnlTester

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 02:58:24 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/13 04:09:14 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/13 04:08:58 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #Include Guard technic to prevent double definition
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE__BONUS_H
 # include <fcntl.h> // FILE, 'O_RDONLY', open
 # include <malloc.h> // malloc, free
 # include <unistd.h> // read

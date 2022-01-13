@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 03:05:41 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/13 03:39:36 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/13 04:01:36 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"get_next_line.h"
+#include	"get_next_line_bonus.h"
 
 int	index_last_bn(char *str)
 {
@@ -58,7 +58,7 @@ ssize_t result, char *buffer){
 
 char	*get_next_line(int fd)
 {
-	static char	*rest;
+	static char	*rest[MAX_OPEN];
 	char		*buffer;
 	ssize_t		result;
 	char		*line;
@@ -69,11 +69,11 @@ char	*get_next_line(int fd)
 		free (buffer);
 		return (NULL);
 	}
-	if (rest == 0)
-		rest = ft_strdup("");
+	if (rest[fd] == 0)
+		rest[fd] = ft_strdup("");
 	result = read(fd, buffer, BUFFER_SIZE);
 	if (rest != NULL)
-		line = get_line_hold_rest(fd, &rest, result, &buffer[0]);
+		line = get_line_hold_rest(fd, &rest[fd], result, &buffer[0]);
 	else
 	{
 		free(buffer);
