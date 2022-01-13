@@ -12,8 +12,26 @@ int index_last_bn(char *str)
 
 static char	*get_line_hold_rest(int fd, char **rest, ssize_t result, char *buffer){
 // recursion line until \n
+	buffer[result] = '\0';
 	*rest = ft_strjoin(*rest, buffer);
-	if(ft_strrchr(*rest, '\n')) // 1) verificar se tem \n no *rest
+	if(result == 0)
+	{
+		if(ft_strlen(*rest) > 0)
+		{
+			char *str;
+			str = ft_strdup(*rest);
+			free(*rest);
+			*rest = NULL;
+			return (str);
+		}
+		else
+		{
+			free(*rest);
+			*rest = NULL;
+			return (NULL);
+		}
+	}
+	else if(ft_strrchr(*rest, '\n')) // 1) verificar se tem \n no *rest
 	{
 		// auxiliary vars
 			//char *line;
@@ -31,12 +49,6 @@ static char	*get_line_hold_rest(int fd, char **rest, ssize_t result, char *buffe
 			*rest = rest2;
 			return (leak_line);
 	}
-	else if(result == 0)
-	{
-		free(*rest);
-		*rest = NULL;
-		return (NULL);
-	}
 
 	return (get_line_hold_rest(fd, rest, read(fd, buffer, BUFFER_SIZE), &buffer[0]));
 }
@@ -49,15 +61,17 @@ char	*get_next_line(int fd)
 	ssize_t result;
 	char *line;
 // check fd
-	//if(read(fd, buffer, 0) < 0)
-		//return (NULL);
+	if(read(fd, buffer, 0) < 0 || BUFFER_SIZE < 1)
+		return (NULL);
 // init vars
 	if(rest == 0)
 		rest = ft_strdup("");
 	result = read(fd, buffer, BUFFER_SIZE);
-	buffer[result] = '\0';
 	// return line until \n & hold rest
-	line = get_line_hold_rest(fd, &rest, result, &buffer[0]);
+	if(rest != NULL)
+		line = get_line_hold_rest(fd, &rest, result, &buffer[0]);
+	else
+		return (NULL);
 // fix leaks
 	/*int i = 0;
 	while(line[i] != '\0')
