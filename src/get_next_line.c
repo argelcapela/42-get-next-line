@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 03:05:41 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/14 02:23:01 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/14 02:48:55 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ ssize_t result, char *buffer){
 		line = ft_substr(*rest, 0, index_first_bn(*rest) + 1);
 		tmp_rest = ft_strdup(&(rest[0][index_first_bn(*rest) + 1]));
 		clean_leak(rest);
-		*rest = tmp_rest;
+		*rest = ft_strdup(tmp_rest);
+		clean_leak(&tmp_rest);
 		return (line);
 	}
 	else if (result == 0 && ft_strlen(*rest) > 0)
