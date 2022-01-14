@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 03:05:41 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/14 02:48:55 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/14 05:25:18 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ ssize_t result, char *buffer){
 		line = ft_substr(*rest, 0, index_first_bn(*rest) + 1);
 		tmp_rest = ft_strdup(&(rest[0][index_first_bn(*rest) + 1]));
 		clean_leak(rest);
-		*rest = ft_strdup(tmp_rest);
-		clean_leak(&tmp_rest);
+		*rest = tmp_rest;
 		return (line);
 	}
 	else if (result == 0 && ft_strlen(*rest) > 0)
@@ -73,7 +72,7 @@ char	*get_next_line(int fd)
 	if (rest == 0)
 		rest = ft_strdup("");
 	result = read(fd, buffer, BUFFER_SIZE);
-	if (rest != NULL)
+	if (rest != NULL && rest)
 		line = get_line_hold_rest(fd, &rest, result, &buffer[0]);
 	else
 	{

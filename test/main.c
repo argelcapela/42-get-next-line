@@ -16,16 +16,14 @@ clear && gcc -D BUFFER_SIZE=2 ../src/get_next_line.h ../src/get_next_line_utils.
 int main(void)
 {
 	// testing mandatory
-	int lyric1 = open("files/41_with_nl", O_RDONLY);
+	int lyric1 = open("files/enemy", O_RDONLY);
+	char *resposta = get_next_line(lyric1);
 
-
-	int i = 0;
-	while(i < 1)
+	while(resposta)
 	{
-		char *resposta = get_next_line(lyric1);
 		printf("%s", resposta);
 		free(resposta);
-		i++;
+		resposta = get_next_line(lyric1);
 	}
 
 	return(0);
