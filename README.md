@@ -136,7 +136,9 @@ make leak
     </tr>
 </tbody>    
 </table>	
-	
+
+<b>Relações importantes entre strlen,strings e arrays</b><br>
+<img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/arrays-pointers/relation-string-arrays-strlen.png?raw=true" width="100%">
 	
 <br><br>	
 	
