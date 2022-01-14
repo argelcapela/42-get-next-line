@@ -19,75 +19,39 @@ O Objetivo é criar uma função em C, dentro de algumas restrições, que leia 
 </div>
 
 <div class="col-12">
-    
-## :books: Funcionalidades:<br>
-<table class="special-border">
-<tr>
-<th colspan="2">Mandatory</th>
-</tr>
-<tr>
-    <td colspan="2">Ler todos os bytes de um descritor de arquivos até encontrar um \n</td>
-</tr>
-</table>
-    
-</div>
-
-<div class="col-12">
 
 ## :rocket: Rodando o projeto:<br>
-<table class="special-border">
-<tr>
-    <td colspan="2">Abra o terminal, entre na pasta do GNL e digite o comando:</td>
-</tr>
-<tr>
-    <td colspan="2">gcc -D BUFFER_SIZE=2 get_next_line.c get_next_line.h get_next_line_utils.c -g && ./a.exe</td>
-</tr>
-</table>
-  <br>
 <li>Repositório Github: <a href="https://github.com/argelcapela/42_get_next_line">Link</a></li>
 <li>Intra 42SP: <a href="https://projects.intra.42.fr/42cursus-get_next_line">Link</a></li>
- 
-	
-	
-</div>
-<div class="col-12">
 
-## :soon: Implementação futura:<br>
-    
-<li>Nada em mente por enquanto.</li>
-    
-</div>
-<div class="col-12">
-    
-
-## :handshake: Colaboradores:<br>
-<table>
-  <tr>
-    <td align="center">
-      <a href="http://github.com/argelcapela">
-        <img src="https://avatars.githubusercontent.com/u/79276276?s=400&u=055b803f4708d59eaf50208ba601f85844125757&v=4" width="100px;" alt="Foto de Argel Capela!"/><br>
-        <sub>
-          <b>Argel Capela</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-</div>
-<div class="col-12">
-    
-## :dart: Status do projeto:<br>
-
-<li>Em desenvolvimento.</li>
-    
-</div>
-<br><br><br><br><br><br>
-<div class="col-12">
-    
-## :memo: Aprendi com esse projeto<br>
+<h3>Teste rápido com Makefile</h3>
 	
-https://docs.google.com/spreadsheets/d/1Ewfq-R65Ymko8qteJmLQJcv46l1OeaD-m8QBJ4s8TEs/edit#gid=0
+```
+make lin
+```
+<p>Compila e executa no ambiee linux</p>
+
+```
+make lin
+```
+<p>Compila e executa no ambiee linux com o cat -e no retorno (quebras de linha serão exibidas com $)</p>
 	
+```
+make win
+```
+<p>Compila e executa no ambiente windows</p>
+	
+```
+make leak
+```
+<p>Compila e executa o valgrind, ambiente linux, com todas as principais flags para buscar leaks de memória!</p>
+	
+</div>
+
+<div class="col-12">
+    
+## :memo: O que eu aprendi com esse projeto?<br>
+<h4>Indice:</h4>
 <li><a href="#static-variable">Variáveis Estáticas</a></li>
 <li><a href="#restrict">Restrict</a></li>
 <li><a href="#stack-heap">Stack & Heap</a></li>
@@ -95,13 +59,11 @@ https://docs.google.com/spreadsheets/d/1Ewfq-R65Ymko8qteJmLQJcv46l1OeaD-m8QBJ4s8
 <li><a href="#leaks">Leaks de Memória</a></li>
 <li><a href="#fds">File Descriptor Padrões do Sistema Operacional (Stdin-0, Stdout-1, Stderr-2)</a></li>
 <li><a href="#runtime-macro">Definir Macro em Tempo de Compilação</a></li>
-<hr>
 <li><a href="#algoritmo">Entendendo a GNL</a></li>
 <li><a href="#step-by-step">Step By Step</a></li>
 <li><a href="#test">Testando o projeto</a></li>
-<hr>
 <li><a href="#debugger">Debugando Projetos</a></li>
-<hr>
+<li><a href="https://docs.google.com/spreadsheets/d/1Ewfq-R65Ymko8qteJmLQJcv46l1OeaD-m8QBJ4s8TEs/edit#gid=0">Google Master dos Cadetes!</a></li>
 <li><a href="#fontes">Fontes</a></li>
     
 <h1 id="static-variable">Variáveis Estáticas</h1>
@@ -522,6 +484,26 @@ valgrind --leak-check=full ./a.exe/out     # execute o seu programa compilado co
 <li><a href="https://www.youtube.com/watch?v=UOns2zDUv30">Core Dump</a></li> 
 <li><a href="https://stackoverflow.com/questions/25798977/returning-string-from-c-function">Returning String Without Memory Leak!</a></li> 
 <li><a href="https://pt.wikipedia.org/wiki/Redirecionamento_(computa%C3%A7%C3%A3o)">Redirecionamento</a></li> 
+</div>
 
+<div class="col-12">
+## :handshake: Colaboradores:<br>
+<table>
+  <tr>
+    <td align="center">
+      <a href="http://github.com/argelcapela">
+        <img src="https://avatars.githubusercontent.com/u/79276276?s=400&u=055b803f4708d59eaf50208ba601f85844125757&v=4" width="100px;" alt="Foto de Argel Capela!"/><br>
+        <sub>
+          <b>Argel Capela</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+</div>
+<div class="col-12">
+    
+## :dart: Status do projeto:<br>
 
+<li>Finalizado com 120 pontos.</li>
 </div>
