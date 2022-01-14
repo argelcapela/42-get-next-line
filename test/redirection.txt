@@ -1,0 +1,4 @@
+Redirecionamento (computação)
+Origem: Wikipédia, a enciclopédia livre.
+Em computação, redirecionamento é uma forma de comunicação entre processos e é uma função comum para a maioria dos interpretadores de linha de comando, incluindo os vários shells do Unix que podem redirecionar fluxos padrões para locais específicos de usuário.
+Em sistemas operacionais do tipo Unix, programas realizam o redirecionamento com a chamada de sistema dup2(2), ou suas análogas menos flexíveis, porém de nível mais alto, stdio, freopen e popen.

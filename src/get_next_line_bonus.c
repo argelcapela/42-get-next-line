@@ -6,13 +6,13 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 03:05:41 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/13 04:01:36 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/14 00:10:12 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"get_next_line_bonus.h"
 
-int	index_last_bn(char *str)
+int	index_first_bn(char *str)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ char	*clean_leak(char **ptr)
 	return (*ptr);
 }
 
-static char	*get_line_hold_rest(int fd, char **rest,
+char	*get_line_hold_rest(int fd, char **rest,
 ssize_t result, char *buffer){
 	char	*line;
 	char	*tmp_rest;
@@ -38,8 +38,8 @@ ssize_t result, char *buffer){
 	*rest = ft_strjoin(*rest, buffer);
 	if (ft_strrchr(*rest, '\n'))
 	{
-		line = ft_substr(*rest, 0, index_last_bn(*rest) + 1);
-		tmp_rest = ft_strdup(&(rest[0][index_last_bn(*rest) + 1]));
+		line = ft_substr(*rest, 0, index_first_bn(*rest) + 1);
+		tmp_rest = ft_strdup(&(rest[0][index_first_bn(*rest) + 1]));
 		clean_leak(rest);
 		*rest = tmp_rest;
 		return (line);
