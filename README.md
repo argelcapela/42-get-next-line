@@ -53,7 +53,7 @@ make leak
 ## :boom: O que eu aprendi com esse projeto?<br>
 <h4>Indice:</h4>
 <li><a href="#static-variable">Variáveis Estáticas</a></li>
-<li><a href="#restrict">Restrict</a></li>
+<li><a href="#arrpon">Reforço Arrays e Ponteiros</a></li>
 <li><a href="#stack-heap">Stack & Heap</a></li>
 <li><a href="#open-read-fd">Open/Read/File Descriptor</a></li>
 <li><a href="#leaks">Leaks de Memória</a></li>
@@ -106,7 +106,9 @@ make leak
 </table>
 <br><br>
 
-<b>Diferentes combinações de Ponteiros + Const</b>
+	
+<h4 id="arrpon">Reforço Arrays e Ponteiros</h4>
+<b>Qual a merda da diferença entre esses char* e const??</b>
 <table>
 <thread>
     <tr>
@@ -133,56 +135,11 @@ make leak
         <td>Não</td>
     </tr>
 </tbody>    
-</table>
-<br><br>
+</table>	
 	
-<h2 id="restrict">Restrict Type Qualifier</h2>
-<b>O que é esse tróço?</b>
-<p>Ele é usado somente em ponteiros, ele é uma promessa, diz para o compilador que esse ponteiro é o único ponteiro que está apontando para o valor apontado, é o único caminho par acessar o valor apontado. Como assim Júnior? Vamos lá! Imagina que temos um ponteiro chamado (int* restrict num1) que está apontando para o número um número 10 qualquer, o restrict promete para o compilador que nenhum outro ponteiro está apontando para esse mesmo número 10. O restrict não afeta nada no código em si, mas sim, no modo como o Assembly, ou o compilador executa o código, se a promessa do restrict não for respeitada, vários erros podem ser gerados no código, porém se usado corretamente, pode tornar uma aplicação muito mais rápida. <br> Bora de exemplo?</p>
-
-```
-void updatePtrs(size_t *ptrA, size_t *ptrB, size_t *val)
-{
-  *ptrA += *val;
-  *ptrB += *val;
-}
-```
-``` 
-; Código Assembly RISC Machine (hipotético)
-ldr r12, [val]     ; Carrega/"Copia" a memória alocada apontada por [val] no registrador r12
-ldr r3, [ptrA]     ; Carrega/"Copia" a memória alocada apontada por [ptrA] no registrador r3
-add r3, r3, r12    ; Executa uma soma entre os registradores: r3 = r3 + r12.
-str r3, [ptrA]     ; Pega o valor do registrador r3 e joga na memória alocada apontada por ptrA.
-ldr r3, [ptrB]     ; Espera até a operação anterior terminar / Carrega o valor da variável [ptrB] no registrador r3
-ldr r12, [val]     ; Carrega/"Copia" a memória alocada apontada por [val] no registrador r12 de novo. Por que?
-                   ; porque se o ponteiro val ou ptrA apontarem para o mesmo local, depois da soma feita anteriormente, o valor de val será diferente, então, o compilador
-                   ; precisa ler de novo para garantir que o valor está correto.
-add r3, r3, r12    ; Executa a soma r3 = r3 + r12
-str r3, [ptrB]     ; Pega o valor do registrador r3 e joga na memória alocada apontada por ptrA.
-``` 
-<p>O Compilador sem o restrict faz uma verificação pra saber se o valor de val mudou, caso val apontasse para o mesmo bloco de memória que os demas ponteiros. </p>
-    
-    
-```
-void updatePtrs(size_t *restrict ptrA, size_t *restrict ptrB, size_t *restrict val)
-{
-  *ptrA += *val;
-  *ptrB += *val;
-}
-```
-``` 
-; Código Assembly RISC Machine (hipotético)
-ldr r12, [val]  ; Aqui o registrador r12 carrega o bloco de memória apontado por [val] somente uma vez. Porque o restrict, garante pro compilador que esse ponteiro é o único                     ; caminho ou seja, esse valor não vai mudar nas outras operações.
-ldr r3, [ptrA]  ; Carrega os blocos de memória apontados pelos ponteiros [ptrA] e [ptrB] nos respectivos registradores r3,r4.
-ldr r4, [ptrB]
-add r3, r3, r12 ; Executa as operações de adição.
-add r4, r4, r12
-str r3, [ptrA]  ; Executa as operações de atualização.
-str r4, [ptrB]
-``` 
-<p>Agora quando, eu coloco o restrict, o compilador não precisa fazer verificações de consistência, ele vai direto ao ponto, só carrega e executa as operações.</p>    
-<i>Nesse exemplo simples, pode parecer pouco relevante porém, o uso correto do restrict em aplicações mais complexos torna a aplicação mais rápida.</i>
-<br><br>
+	
+<br><br>	
+	
 	
 <h4 id="stack-heap">Stack & Heap</h4>
 <b>Tipos de Alocações de Memória das Variáveis:</b><br>
@@ -193,8 +150,9 @@ str r4, [ptrB]
 <b>Como a memória é dividida e organizada?:</b><br><br>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/stack-heap/organizacao_da_memoria.png?raw=true">
 <p>Variáveis locais são guardadas na Stack. <br> Variáveis dinâmicamente alocadas são guardadas na Heap, <i>o tempo de alocação é mais demorado que na Stack. Think of it, quando for projetar programas. Se usar muito Malloc o programa será super lento, existem várias técnicas para gerenciamento de memória, que torna a alocação dinâmica muito mais rápida. </i><br>Variáveis Estáticas são guardadas em outro lugar, nem Heap nem Stack, mas isso é história pra outro dia. XD!</p>
-    
-<h1 id="open-read-fd">Open/Read/File Descriptor</h1>
+<br><br>    
+	
+<h2 id="open-read-fd">Open/Read/File Descriptor</h2>
 <b>O que é o nosso queridinho e temido File Descriptor (Descritor de Arquivo)?</b>
 <p>É um número. Esse número identifica um arquivo aberto. Toda vez que um arquivo é aberto, é feito um registro em uma tabela, dos arquivos abertos do sistema, cada registro tem um ID, como em SQL, o File Descriptor é esse ID. Simples assim.</p>   
 
