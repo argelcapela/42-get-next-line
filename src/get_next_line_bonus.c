@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 03:05:41 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/14 00:10:12 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/14 06:01:49 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ ssize_t result, char *buffer){
 
 char	*get_next_line(int fd)
 {
-	static char	*rest[MAX_OPEN];
+	static char	*rest[1024];
 	char		*buffer;
 	ssize_t		result;
 	char		*line;
