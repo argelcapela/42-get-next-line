@@ -50,7 +50,7 @@ make leak
 
 <div class="col-12">
     
-## :memo: O que eu aprendi com esse projeto?<br>
+## :boom: O que eu aprendi com esse projeto?<br>
 <h4>Indice:</h4>
 <li><a href="#static-variable">Variáveis Estáticas</a></li>
 <li><a href="#restrict">Restrict</a></li>
@@ -63,10 +63,9 @@ make leak
 <li><a href="#step-by-step">Step By Step</a></li>
 <li><a href="#test">Testando o projeto</a></li>
 <li><a href="#debugger">Debugando Projetos</a></li>
-<li><a href="https://docs.google.com/spreadsheets/d/1Ewfq-R65Ymko8qteJmLQJcv46l1OeaD-m8QBJ4s8TEs/edit#gid=0">Google Master dos Cadetes!</a></li>
 <li><a href="#fontes">Fontes</a></li>
     
-<h1 id="static-variable">Variáveis Estáticas</h1>
+<h2 id="static-variable">Variáveis Estáticas</h2>
 <b>O que são Variáveis Estáticas ,pelo amor do pai ?</b>
 <p>Uma variável que você coloca um valor nela, e esse valor, fica ali, não importa o que aconteça, <u>até o programa acabar, ou até você atribuir outro valor aquela variável.</u></p>
 <br><br>
@@ -136,7 +135,8 @@ make leak
 </tbody>    
 </table>
 <br><br>
-<h1 id="restrict">Restrict Type Qualifier</h1>
+	
+<h2 id="restrict">Restrict Type Qualifier</h2>
 <b>O que é esse tróço?</b>
 <p>Ele é usado somente em ponteiros, ele é uma promessa, diz para o compilador que esse ponteiro é o único ponteiro que está apontando para o valor apontado, é o único caminho par acessar o valor apontado. Como assim Júnior? Vamos lá! Imagina que temos um ponteiro chamado (int* restrict num1) que está apontando para o número um número 10 qualquer, o restrict promete para o compilador que nenhum outro ponteiro está apontando para esse mesmo número 10. O restrict não afeta nada no código em si, mas sim, no modo como o Assembly, ou o compilador executa o código, se a promessa do restrict não for respeitada, vários erros podem ser gerados no código, porém se usado corretamente, pode tornar uma aplicação muito mais rápida. <br> Bora de exemplo?</p>
 
@@ -182,8 +182,9 @@ str r4, [ptrB]
 ``` 
 <p>Agora quando, eu coloco o restrict, o compilador não precisa fazer verificações de consistência, ele vai direto ao ponto, só carrega e executa as operações.</p>    
 <i>Nesse exemplo simples, pode parecer pouco relevante porém, o uso correto do restrict em aplicações mais complexos torna a aplicação mais rápida.</i>
-
-<h1 id="stack-heap">Stack & Heap</h1>
+<br><br>
+	
+<h4 id="stack-heap">Stack & Heap</h4>
 <b>Tipos de Alocações de Memória das Variáveis:</b><br>
 <br>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/stack-heap/alocacoes.png?raw=true">
@@ -268,7 +269,7 @@ I w
 ```
 <br><br>	
 
-<h1 id="runtime-macro">Definir Macro em Tempo de Compilação</h1>
+<h2 id="runtime-macro">Definir Macro em Tempo de Compilação</h2>
 
 ```
 $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
@@ -277,20 +278,29 @@ $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
 <p>-D NOME_CONSTANTE, nós podemos criar uma variável em tempo de compilação, é a mesma coisa que <br> #include NOME_CONSTANTE VALOR</p>
 <br><br>
 
-<h1 id="fds">File Descriptor Padrões do Sistema Operacional (Stdin-0, Stdout-1, Stderr-2)</h1>
+<h4 id="fds">File Descriptor Padrões do Sistema Operacional (Stdin-0, Stdout-1, Stderr-2)</h4>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/std-fds/std.jpg?raw=true" width="500px" height="300px" alt="File Descriptor Padrões do Sistema">
 <p>Do 0 ao 2, esses FD(s) são um pouco abstratos de entender, num primeiro momento, mas eles estão sempre criados. 0 representa o que você digita no teclado, o 1 representa mostrar alguma coisa no terminal de console e 2 representa, todo erro que ocorre ao se executar um comando numa terminal de console. Do 3 em diante os FD(s) passam a representar os arquivos abertos. No momento só o que importa é que 1 representa a saída padrão.</p>
 <b></b>
 <br><br>
 
-<h1 id="leaks">Leaks de Memória & Valgrind</h1>
+<h2 id="leaks">Resolvendo Erros de Memória</h2>
+<b>Debugando</b>
+<li><b>Instalação do Compilador:</b></li>
+<li><p>Para que o Debugger Funcione corretamente é necessário o uso da FLAG -g no gcc.</p></li>
+<li>F10 -> Avança o código para frente.</li>
+<li>F11 -> Entra dentro de uma função, quando está em cima dela.</li>
+<li>SHIFT + F11 -> Sai de uma função.</li>
+
+</p>
+
+
 
 <b>Que parada é essa de Leak de Memória?</b>
 <p>Ocorre quando você aloca dinâmicamente memória (malloc, ft_calloc) e não libera quando essa memória não é mais necessária.</p>
 <br><br>
 
 <b>Erros Chatos e Frequentes</b>
-
 <table>
 <tr>
 <td>Erro</td>
@@ -302,10 +312,14 @@ $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
 <td>
 	Segmentation Fault<br>
 	ou<br>
-	SIGSEGV	
+	SIGSEGV<br>
+	ou<br>
+	Core Dump
 </td>
 <td>
-	<p>Tentar acessar um bloco de memória ilegal.</p>
+	<ol>
+		<li>Tenta acessar uma variável que não tem valor.</li>
+	</ol>
 </td>
 <td></td>
 </tr>
@@ -336,30 +350,29 @@ Malloca memória e não da FREE.
 Stack Overflow
 </td>
 <td>
-Malloca tanta memória e/ou cria tantas variáveis que o programa atinge o limite de memória disponível, crasheando!.
+	<ol>
+		<li><Malloca tanta memória e/ou cria tantas variáveis que o programa atinge o limite de memória disponível, crasheando!.</li>
+		<li>Atinge o limite de memória da Stack ao invéz de alocar dinâmicamente na Heap.</li>
+	</ol>
 </td>
 <td></td>
 </tr>
 </table>
 <br><br>
-<b>Encontrando Erros de memória invisíveis com o Valgrind</b>
-
+<b>Encontrando Erros com o valgrind</b>
 ```
-valgrind --leak-check=full ./a.exe/out     # execute o seu programa compilado com o valgrind
-					   # leia as mensagens de erro uma por uma e tente corrigí-las.
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out     
 ```
-
+<li><b>--leak-check=full</b>: ...</li>
+<li><b>--show-leak-kinds=all</b>: ...</li>
+<li><b>--track-origins=yes</b>: ...</li>
 <br><br>
 
-<h1 id="algoritmo">Qual o lógica desse projeto GNL?</h1>
+<h2 id="algoritmo">Algoritmo GNL?</h2>
 <br><br>
 
 
-<h1 id="step-by-step">Step By Step</h1>
-<br><br>
-
-
-<h1 id="test">Testando o projeto</h1>
+<h2 id="test">Testando o projeto</h2>
 <table class="special-border">
 <tr>
     <td colspan="2">Abra o terminal, entre na pasta do GNL e digite o comando:</td>
@@ -374,104 +387,104 @@ valgrind --leak-check=full ./a.exe/out     # execute o seu programa compilado co
 <br><br>
 
 <ul>
-	<li><a href="https://github.com/Tripouille/gnlTester">Tripouille</a>(Muito bom!)</li>
-	<li><a href="https://github.com/charMstr/GNL_lover">GNL_Lover</a>(...)</li>
-	<li><a href="https://github.com/mrjvs/42cursus_gnl_tests">42cursur_gnl_tests</a>(...)</li>
-	<li><a href="https://github.com/Hellio404/Get_Next_Line_Tester">Helio</a>(...)</li>
+	<li></li>
+
 </ul>
 <br><br>
-<b>Principais testes da GNL (Moulinete)</b>
 
+
+<b>Testador Automática GNL - Tripouille</b>
+```
+git clone https://github.com/Tripouille/gnlTester
+```
 <table>
 	<tr>
-		<td>Nome</td>
-		<td>Descrição</td>
-		<td>Solução</td>
+		<td>Nome do Teste:</td>
+		<td>Pra ta certo, sua GNL tem que retornar:</td>
+	</tr>
+	<tr>
+		<td>invalid fd</td>
+		<td>(NULL)</td>
 	</tr>
 	<tr>
 		<td>41_no_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>41_with_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>42_no_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>42_with_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>43_no_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>43_with_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>alternate_line_nl_no_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>alternate_line_nl_with_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>big_line_no_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>big_line_with_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>empty</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>multiple_line_no_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>multiple_line_with_nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>multiple_nlx5</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 	<tr>
 		<td>nl</td>
 		<td>Descrição</td>
-		<td>Solução</td>
 	</tr>
 </table>
 <br></br>
-<h1 id="debugger">Debugando Projetos</h1>
-<h1 id="extra">Extra</h1>
-<b>Entendendo melhor os caracteres</b>
+
+
+<h2 id="step-by-step">Step By Step</h2>
+<br><br>
+
+
+<h2 id="extra">Extra</h2>
+```
+ulimit -n
+```
+<p>Informa a quantidade máxima de File Descriptors possível no sistema.</p>
+
 
 
 <br><br>
-<h1 id="fontes">Fontes</h1>
+<h4 id="fontes">Fontes</h4>
+<li><a href="https://docs.google.com/spreadsheets/d/1Ewfq-R65Ymko8qteJmLQJcv46l1OeaD-m8QBJ4s8TEs/edit#gid=0">PLANILHA MESTRA DOS CADETES!</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Restrict">Restrict 1</a></li>
 <li><a href="https://www.youtube.com/watch?v=TBGu3NNpF1Q">Restrict 2</a></li>
 <li><a href="https://godbolt.org/">Explore o Assembly de seus códigos em C</a></li> 
@@ -484,6 +497,7 @@ valgrind --leak-check=full ./a.exe/out     # execute o seu programa compilado co
 <li><a href="https://www.youtube.com/watch?v=UOns2zDUv30">Core Dump</a></li> 
 <li><a href="https://stackoverflow.com/questions/25798977/returning-string-from-c-function">Returning String Without Memory Leak!</a></li> 
 <li><a href="https://pt.wikipedia.org/wiki/Redirecionamento_(computa%C3%A7%C3%A3o)">Redirecionamento</a></li> 
+
 </div>
 
 <div class="col-12">
