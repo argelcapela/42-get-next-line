@@ -521,6 +521,7 @@ valgrind --leak-check=full ./a.exe/out     # execute o seu programa compilado co
 <li><a href="https://www.youtube.com/watch?v=qZ1oQLu7M5Y">Segmentation Fault 1</a></li> 
 <li><a href="https://www.youtube.com/watch?v=UOns2zDUv30">Core Dump</a></li> 
 <li><a href="https://stackoverflow.com/questions/25798977/returning-string-from-c-function">Returning String Without Memory Leak!</a></li> 
+<li><a href="https://pt.wikipedia.org/wiki/Redirecionamento_(computa%C3%A7%C3%A3o)">Redirecionamento</a></li> 
 
 
 </div>
