@@ -4,8 +4,10 @@
 -->
 
 <div class="hide-on-portfolio">
-<h1 align="center"> 42_get_next_line </h1>
-
+<div align="center">
+	<img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/img/galeria/portfolio_img_42-get-next-line.jpg?raw=true" width="250px">
+</div>
+	
 ## :memo: Descrição:
 O Objetivo é criar uma função em C, dentro de algumas restrições, que leia uma linha de um Descritor de Arquivo ( é mais fácil entender na prática), em outras palavras , de um arquivo de texto. Cada vez que essa função get_next_line() é chamada, deve retornar a linha seguinte, até o final do arquivo. Excelente para praticar lógica, ponteiros e leaks(vazamentos) de memória. MUUITOS LEAKS DE MEMÓRIA.
 </div>
@@ -21,10 +23,11 @@ O Objetivo é criar uma função em C, dentro de algumas restrições, que leia 
 <div class="col-12">
 
 ## :rocket: Rodando o projeto:<br>
+<b>Links:</b>
 <li>Repositório Github: <a href="https://github.com/argelcapela/42_get_next_line">Link</a></li>
 <li>Intra 42SP: <a href="https://projects.intra.42.fr/42cursus-get_next_line">Link</a></li>
-
-<h3>Dentro da pasta test, pode-se executar esses comandos e testar rapidamente o projeto!</h3>
+<br><br>
+<b> Depois de clonar o repositório, dentro da pasta test, pode-se executar esses comandos e testar rapidamente o projeto:</b><br><br>
 	
 ```
 make lin
@@ -53,20 +56,19 @@ make tester
 		
 	
 </div>
-
+<br>
 <div class="col-12">
     
 ## :boom: O que eu aprendi e como foi desenvolvido esse projeto?<br>
 <h4>Indice:</h4>
-<b>1) O que foi preciso para fazer a GNL ler linha por linha?</b>
+<b>1) O que foi preciso para fazer a GNL ler linha por linha?</b><br>
 <li><a href="#algoritmo">Qual a lógica (Algoritmo) da minha GNL?</a></li>
 <li><a href="#static-variable">Variáveis Estáticas</a></li>
 <li><a href="#arrpon">Reforço Arrays e Ponteiros</a></li>
 <li><a href="#stack-heap">Divisões da Memória</a></li>
 <li><a href="#open-read-fd">Open, File Descriptor, Read</a></li>
 <li><a href="#runtime-macro">Definir Macro em Tempo de Compilação</a></li>
-<li><a href="#debugger">Como usar o Debugger (GDB/VSCODE)</a></li>
-	
+<li><a href="#debug">Como usar o Debugger (GDB/VSCODE)</a></li>
 <br>
 	
 <b>2) Resolvendo Leaks, Norma e Executando testers?</b>
@@ -77,9 +79,11 @@ make tester
 <b>3) Confira a Playlist GNL e muito mais!</b>
 <li><a href="#step-by-step">42-get-next-line Passo a Passo!</a></li>
 <li><a href="#fontes">Fontes</a></li>
-<br>
+</div>
+<br>	
 	
 <div class="col-12">
+	
 ## :handshake: Colaboradores:<br>
 <table>
   <tr>
@@ -97,11 +101,15 @@ make tester
 <div class="col-12">
     
 ## :dart: Status do projeto:<br>
-<li>Finalizado com 120 pontos.</li>
+<img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/icons/finalizado.png?raw=true" width="300px" height="230px">
 </div>
 
-<br><br><br><br>
-<hr>
+<br><br><br>
+<br><br><br>
+<br><br>
+	
+## :trollface: Conteúdo indexado:<br>
+
 <h2 id="static-variable">Variáveis Estáticas</h2>
 <b>O que são Variáveis Estáticas ,pelo amor do pai ?</b>
 <p>Uma variável que você coloca um valor nela, e esse valor, fica ali, não importa o que aconteça, <u>até o programa acabar, ou até você atribuir outro valor aquela variável.</u></p>
@@ -265,7 +273,7 @@ $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
 <br><br>
 
 <h2 id="leaks">Resolvendo Erros de Memória</h2>
-<b>Debugando</b>
+<b id="debug>Debugando</b>
 <li><b>Instalação do Compilador:</b></li>
 <li><p>Para que o Debugger Funcione corretamente é necessário o uso da FLAG -g no gcc.</p></li>
 <li>F10 -> Avança o código para frente.</li>
