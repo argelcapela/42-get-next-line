@@ -56,19 +56,21 @@ make tester
 
 <div class="col-12">
     
-## :boom: O que eu aprendi com esse projeto?<br>
+## :boom: O que eu aprendi e como foi desenvolvido esse projeto?<br>
 <h4>Indice:</h4>
 <li><a href="#static-variable">Variáveis Estáticas</a></li>
 <li><a href="#arrpon">Reforço Arrays e Ponteiros</a></li>
-<li><a href="#stack-heap">Stack & Heap</a></li>
-<li><a href="#open-read-fd">Open/Read/File Descriptor</a></li>
+<li><a href="#stack-heap">Divisões da Memória</a></li>
+<li><a href="#open-read-fd">Open, File Descriptor, Read</a></li>
 <li><a href="#leaks">Leaks de Memória</a></li>
 <li><a href="#fds">File Descriptor Padrões do Sistema Operacional (Stdin-0, Stdout-1, Stderr-2)</a></li>
 <li><a href="#runtime-macro">Definir Macro em Tempo de Compilação</a></li>
+<li><a href="#debugger">Debugando Projetos</a></li>
+<br>
 <li><a href="#algoritmo">Entendendo a GNL</a></li>
 <li><a href="#step-by-step">Step By Step</a></li>
 <li><a href="#test">Testando o projeto</a></li>
-<li><a href="#debugger">Debugando Projetos</a></li>
+<br>
 <li><a href="#fontes">Fontes</a></li>
     
 <h2 id="static-variable">Variáveis Estáticas</h2>
@@ -120,37 +122,8 @@ make tester
 </tbody>    
 </table>
 <br><br>
-
-	
 <h4 id="arrpon">Reforço Arrays e Ponteiros</h4>
-<b>Qual a merda da diferença entre esses char* e const??</b>
-<table>
-<thread>
-    <tr>
-        <td>Diferença</td>
-        <td>char*</td>
-        <td>const char*</td>
-        <td>char* const</td>
-        <td>const char* const</td>
-    </tr>
-</thead>
-<tbody>    
-    <tr>
-        <td>A Sequência apontada(string) precisa ser?</td>
-        <td>String normal ou Constante, tanto faz.</td>
-        <td>Constante(Imutável)</td>
-        <td>String normal(Mutável)</td>
-        <td>Constante(Imutável)</td>
-    </tr>
-    <tr>
-        <td>O ponteiro pode trocar a posição que ele está apontando?</td>
-        <td>Sim</td>
-        <td>Sim</td>
-        <td>Não</td>
-        <td>Não</td>
-    </tr>
-</tbody>    
-</table>	
+	
 
 <b>Relações importantes entre strlen,strings e arrays</b><br>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/arrays-pointers/relation-string-arrays-strlen.png?raw=true" width="100%">
@@ -158,7 +131,7 @@ make tester
 <br><br>	
 	
 	
-<h4 id="stack-heap">Stack & Heap</h4>
+<h4 id="stack-heap">Divisões da Memória</h4>
 <b>Tipos de Alocações de Memória das Variáveis:</b><br>
 <br>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/stack-heap/alocacoes.png?raw=true">
@@ -169,7 +142,10 @@ make tester
 <p>Variáveis locais são guardadas na Stack. <br> Variáveis dinâmicamente alocadas são guardadas na Heap, <i>o tempo de alocação é mais demorado que na Stack. Think of it, quando for projetar programas. Se usar muito Malloc o programa será super lento, existem várias técnicas para gerenciamento de memória, que torna a alocação dinâmica muito mais rápida. </i><br>Variáveis Estáticas são guardadas em outro lugar, nem Heap nem Stack, mas isso é história pra outro dia. XD!</p>
 <br><br>    
 	
-<h2 id="open-read-fd">Open/Read/File Descriptor</h2>
+<h2 id="open-read-fd">Open, File Descriptor e Read</h2>
+<i>#include <unistd.h>: read</i>
+<i>#include <fcntl.h>:  open, read, 'O_RDONLY'</i>
+<br>
 <b>O que é o nosso queridinho e temido File Descriptor (Descritor de Arquivo)?</b>
 <p>É um número. Esse número identifica um arquivo aberto. Toda vez que um arquivo é aberto, é feito um registro em uma tabela, dos arquivos abertos do sistema, cada registro tem um ID, como em SQL, o File Descriptor é esse ID. Simples assim.</p>   
 
@@ -244,7 +220,7 @@ I w
 ```
 <br><br>	
 
-<h2 id="runtime-macro">Definir Macro em Tempo de Compilação</h2>
+<h4 id="runtime-macro">Definir Macro em Tempo de Compilação</h4>
 
 ```
 $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
@@ -253,7 +229,7 @@ $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
 <p>-D NOME_CONSTANTE, nós podemos criar uma variável em tempo de compilação, é a mesma coisa que <br> #include NOME_CONSTANTE VALOR</p>
 <br><br>
 
-<h4 id="fds">File Descriptor Padrões do Sistema Operacional (Stdin-0, Stdout-1, Stderr-2)</h4>
+<h2 id="fds">File Descriptor Padrões do Sistema Operacional (Stdin-0, Stdout-1, Stderr-2)</h2>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/std-fds/std.jpg?raw=true" width="500px" height="300px" alt="File Descriptor Padrões do Sistema">
 <p>Do 0 ao 2, esses FD(s) são um pouco abstratos de entender, num primeiro momento, mas eles estão sempre criados. 0 representa o que você digita no teclado, o 1 representa mostrar alguma coisa no terminal de console e 2 representa, todo erro que ocorre ao se executar um comando numa terminal de console. Do 3 em diante os FD(s) passam a representar os arquivos abertos. No momento só o que importa é que 1 representa a saída padrão.</p>
 <b></b>
@@ -472,6 +448,35 @@ make -C /other/dir
 cd /other/dir && make
 ```
 <p>Executa o Makefile de outro diretório.</p>
+
+<b>Qual a merda da diferença entre esses char* e const??</b>
+<table>
+<thread>
+    <tr>
+        <td>Diferença</td>
+        <td>char*</td>
+        <td>const char*</td>
+        <td>char* const</td>
+        <td>const char* const</td>
+    </tr>
+</thead>
+<tbody>    
+    <tr>
+        <td>A Sequência apontada(string) precisa ser?</td>
+        <td>String normal ou Constante, tanto faz.</td>
+        <td>Constante(Imutável)</td>
+        <td>String normal(Mutável)</td>
+        <td>Constante(Imutável)</td>
+    </tr>
+    <tr>
+        <td>O ponteiro pode trocar a posição que ele está apontando?</td>
+        <td>Sim</td>
+        <td>Sim</td>
+        <td>Não</td>
+        <td>Não</td>
+    </tr>
+</tbody>    
+</table>
 
 
 
