@@ -24,7 +24,7 @@ O Objetivo é criar uma função em C, dentro de algumas restrições, que leia 
 <li>Repositório Github: <a href="https://github.com/argelcapela/42_get_next_line">Link</a></li>
 <li>Intra 42SP: <a href="https://projects.intra.42.fr/42cursus-get_next_line">Link</a></li>
 
-<h3>Teste rápido com Makefile</h3>
+<h3>Dentro da pasta test, pode-se executar esses comandos e testar rapidamente o projeto!</h3>
 	
 ```
 make lin
@@ -45,6 +45,12 @@ make win
 make leak
 ```
 <p>Compila e executa o valgrind, ambiente linux, com todas as principais flags para buscar leaks de memória!</p>
+	
+```
+make tester
+```
+<p>Executa o tester Tripoulle!</p>
+		
 	
 </div>
 
@@ -102,6 +108,15 @@ make leak
         <td>Quando a função termina a sua execução.</td>
         <td>Quando o programa, para de rodar.</td>
     </tr>
+    <tr>
+        <td>É armazenada em que parte da memória?</td>
+        <td>Stack</td>
+	    <td>
+		    <li>BSS: estáticas não inicializadas</li>
+		    <li>DATA: estáticas inicializadas</li>
+	    </td>
+    </tr>	
+
 </tbody>    
 </table>
 <br><br>
