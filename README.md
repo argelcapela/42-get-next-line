@@ -58,21 +58,50 @@ make tester
     
 ## :boom: O que eu aprendi e como foi desenvolvido esse projeto?<br>
 <h4>Indice:</h4>
+<b>1) O que foi preciso para fazer a GNL ler linha por linha?</b>
+<li><a href="#algoritmo">Qual a lógica (Algoritmo) da minha GNL?</a></li>
 <li><a href="#static-variable">Variáveis Estáticas</a></li>
 <li><a href="#arrpon">Reforço Arrays e Ponteiros</a></li>
 <li><a href="#stack-heap">Divisões da Memória</a></li>
 <li><a href="#open-read-fd">Open, File Descriptor, Read</a></li>
-<li><a href="#leaks">Leaks de Memória</a></li>
-<li><a href="#fds">File Descriptor Padrões do Sistema Operacional (Stdin-0, Stdout-1, Stderr-2)</a></li>
 <li><a href="#runtime-macro">Definir Macro em Tempo de Compilação</a></li>
-<li><a href="#debugger">Debugando Projetos</a></li>
+<li><a href="#debugger">Como usar o Debugger (GDB/VSCODE)</a></li>
+	
 <br>
-<li><a href="#algoritmo">Entendendo a GNL</a></li>
-<li><a href="#step-by-step">Step By Step</a></li>
-<li><a href="#test">Testando o projeto</a></li>
+	
+<b>2) Resolvendo Leaks, Norma e Executando testers?</b>
+<li><a href="#leaks">Erros de Memória</a></li>
+<li><a href="#test">Testes automatizados?</a></li>
 <br>
+	
+<b>3) Confira a Playlist GNL e muito mais!</b>
+<li><a href="#step-by-step">42-get-next-line Passo a Passo!</a></li>
 <li><a href="#fontes">Fontes</a></li>
+<br>
+	
+<div class="col-12">
+## :handshake: Colaboradores:<br>
+<table>
+  <tr>
+    <td align="center">
+      <a href="http://github.com/argelcapela">
+        <img src="https://avatars.githubusercontent.com/u/79276276?s=400&u=055b803f4708d59eaf50208ba601f85844125757&v=4" width="100px;" alt="Foto de Argel Capela!"/><br>
+        <sub>
+          <b>Argel Capela</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+</div>
+<div class="col-12">
     
+## :dart: Status do projeto:<br>
+<li>Finalizado com 120 pontos.</li>
+</div>
+
+<br><br><br><br>
+<hr>
 <h2 id="static-variable">Variáveis Estáticas</h2>
 <b>O que são Variáveis Estáticas ,pelo amor do pai ?</b>
 <p>Uma variável que você coloca um valor nela, e esse valor, fica ali, não importa o que aconteça, <u>até o programa acabar, ou até você atribuir outro valor aquela variável.</u></p>
@@ -497,32 +526,9 @@ cd /other/dir && make
 <li><a href="https://stackoverflow.com/questions/25798977/returning-string-from-c-function">Returning String Without Memory Leak!</a></li> 
 <li><a href="https://pt.wikipedia.org/wiki/Redirecionamento_(computa%C3%A7%C3%A3o)">Redirecionamento</a></li> 
 <li><a href="https://superuser.com/questions/370575/how-to-run-make-file-from-any-directory">Executing Makefile in another directory</a></li> 
-
-
+<br>
 <li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
 <li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
 <li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
 
-</div>
-
-<div class="col-12">
-## :handshake: Colaboradores:<br>
-<table>
-  <tr>
-    <td align="center">
-      <a href="http://github.com/argelcapela">
-        <img src="https://avatars.githubusercontent.com/u/79276276?s=400&u=055b803f4708d59eaf50208ba601f85844125757&v=4" width="100px;" alt="Foto de Argel Capela!"/><br>
-        <sub>
-          <b>Argel Capela</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
-</div>
-<div class="col-12">
-    
-## :dart: Status do projeto:<br>
-
-<li>Finalizado com 120 pontos.</li>
 </div>
