@@ -6,15 +6,17 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 02:58:24 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/15 03:53:13 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/15 04:33:28 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
+# define FD_LIMIT 1024
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
+
 
 char	*ft_strrchr(const char *str, int ch);
 char	*ft_strjoin(char *s1, char *s2);
@@ -26,6 +28,6 @@ int		index_first_bn(char *str);
 char	*clean_leak(char **ptr);
 char	*get_next_line(int fd);
 char	*get_line_hold_rest(int fd, char **rest,
-			ssize_t result, char *buffer);
+			int result, char *buffer);
 
 #endif

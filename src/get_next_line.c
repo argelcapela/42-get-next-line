@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 03:05:41 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/14 05:25:18 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/15 04:34:03 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*clean_leak(char **ptr)
 }
 
 char	*get_line_hold_rest(int fd, char **rest,
-ssize_t result, char *buffer){
+int result, char *buffer){
 	char	*line;
 	char	*tmp_rest;
 
@@ -60,7 +60,7 @@ char	*get_next_line(int fd)
 {
 	static char	*rest;
 	char		*buffer;
-	ssize_t		result;
+	int		result;
 	char		*line;
 
 	buffer = malloc(BUFFER_SIZE + 1);
