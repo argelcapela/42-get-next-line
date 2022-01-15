@@ -494,19 +494,13 @@ cd /other/dir && make
     </tr>
 </tbody>    
 </table>
-
-
-
-
-	      
-<h2 id="step-by-step">42-get-next-line Passo a Passo</h2>
-[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
-		     
-[<img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="50%">](https://youtu.be/D9G1VOjN_84)
+<br><br>
+      
+<h2 id="step-by-step">42-get-next-line Passo a Passo</h2><br>
+[<img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%">](https://youtu.be/D9G1VOjN_84)
 		     
 <br><br>
-
-<h4 id="fontes">Fontes</h4>
+<h2 id="fontes">Fontes</h2>
 <li><a href="https://docs.google.com/spreadsheets/d/1Ewfq-R65Ymko8qteJmLQJcv46l1OeaD-m8QBJ4s8TEs/edit#gid=0">PLANILHA MESTRA DOS CADETES!</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Restrict">Restrict 1</a></li>
 <li><a href="https://www.youtube.com/watch?v=TBGu3NNpF1Q">Restrict 2</a></li>
