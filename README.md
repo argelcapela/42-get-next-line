@@ -435,10 +435,29 @@ git clone https://github.com/Tripouille/gnlTester
 
 
 <h2 id="extra">Extra</h2>
+
 ```
 ulimit -n
 ```
+
 <p>Informa a quantidade máxima de File Descriptors possível no sistema.</p>
+
+```
+@rm -rf *.o 2>/dev/null || true
+```
+
+<li>@: esconde o comando.</li>
+<li>2>/dev/null || true: esconde os erros se houver.</li>
+
+```
+make -C /other/dir
+```
+
+```
+cd /other/dir && make
+```
+<p>Executa o Makefile de outro diretório.</p>
+
 
 
 
@@ -457,6 +476,12 @@ ulimit -n
 <li><a href="https://www.youtube.com/watch?v=UOns2zDUv30">Core Dump</a></li> 
 <li><a href="https://stackoverflow.com/questions/25798977/returning-string-from-c-function">Returning String Without Memory Leak!</a></li> 
 <li><a href="https://pt.wikipedia.org/wiki/Redirecionamento_(computa%C3%A7%C3%A3o)">Redirecionamento</a></li> 
+<li><a href="https://superuser.com/questions/370575/how-to-run-make-file-from-any-directory">Executing Makefile in another directory</a></li> 
+
+
+<li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
+<li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
+<li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
 
 </div>
 
