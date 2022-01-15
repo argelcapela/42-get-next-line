@@ -497,7 +497,7 @@ cd /other/dir && make
 <br><br>
       
 <h2 id="step-by-step">42-get-next-line Passo a Passo</h2><br>
-[<img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%">](https://youtu.be/D9G1VOjN_84)
+<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
 		     
 <br><br>
 <h2 id="fontes">Fontes</h2>
