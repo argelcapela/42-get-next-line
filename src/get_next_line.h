@@ -6,14 +6,14 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 02:58:24 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/14 00:33:48 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/15 03:53:03 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # include <fcntl.h>
-# include <malloc.h>
+# include <stdlib.h>
 # include <unistd.h>
 
 char	*ft_strrchr(const char *str, int ch);
