@@ -108,8 +108,11 @@ make tester
 <br><br><br>
 <br><br>
 	
-## :trollface: Conteúdo indexado:<br>
-
+<div align="center">
+:crown::trollface: 
+<hr>
+</div>    
+<br><br>	
 <h2 id="static-variable">Variáveis Estáticas</h2>
 <b>O que são Variáveis Estáticas ,pelo amor do pai ?</b>
 <p>Uma variável que você coloca um valor nela, e esse valor, fica ali, não importa o que aconteça, <u>até o programa acabar, ou até você atribuir outro valor aquela variável.</u></p>
@@ -360,31 +363,13 @@ valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out
 <br><br>
 
 
-<h2 id="test">Testando o projeto</h2>
-<table class="special-border">
-<tr>
-    <td colspan="2">Abra o terminal, entre na pasta do GNL e digite o comando:</td>
-</tr>
-<tr>
-    <td colspan="2">gcc -D BUFFER_SIZE=2 get_next_line.c get_next_line.h get_next_line_utils.c -g && ./a.exe</td>
-</tr>
-</table>
-<br><br>
-<b>Testadores GNL</b>
-<img src="https://github.com/argelcapela/gnl/blob/main/test/testadores/status%20testadores%20gnl.png?raw=true" alt="status dos testadores">
-<br><br>
+<h2 id="test">Testes Automatizados</h2>
 
-<ul>
-	<li></li>
-
-</ul>
-<br><br>
-
-
-<b>Testador Automática GNL - Tripouille</b>
+<b>Tripouille</b>
 ```
 git clone https://github.com/Tripouille/gnlTester
 ```
+<br>
 <table>
 	<tr>
 		<td>Nome do Teste:</td>
@@ -457,11 +442,6 @@ git clone https://github.com/Tripouille/gnlTester
 </table>
 <br></br>
 
-
-<h2 id="step-by-step">Step By Step</h2>
-<br><br>
-
-
 <h2 id="extra">Extra</h2>
 
 ```
@@ -518,7 +498,14 @@ cd /other/dir && make
 
 
 
+	      
+<h2 id="step-by-step">42-get-next-line Passo a Passo</h2>
+[![Watch the video](https://img.youtube.com/vi/T-D1KVIuvjA/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+		     
+[<img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="50%">](https://youtu.be/D9G1VOjN_84)
+		     
 <br><br>
+
 <h4 id="fontes">Fontes</h4>
 <li><a href="https://docs.google.com/spreadsheets/d/1Ewfq-R65Ymko8qteJmLQJcv46l1OeaD-m8QBJ4s8TEs/edit#gid=0">PLANILHA MESTRA DOS CADETES!</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Restrict">Restrict 1</a></li>
