@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 03:01:30 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/13 03:42:14 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/17 15:51:41 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,30 +31,23 @@ char	*ft_strrchr(const char *str, int ch)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	size_t		i;
-	size_t		f;
-	char		*str;
+	size_t		ls1;
+	size_t		ls2;
+	char		*newstr;
 
-	f = 0;
-	i = 0;
-	if (!s1 || !s2)
+	ls1 = -1;
+	ls2 = -1;
+	newstr = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!newstr)
 		return (NULL);
-	str = malloc(((ft_strlen(s1) + ft_strlen(s2)) + 1) * sizeof(char));
-	while (i < (ft_strlen(s1) + ft_strlen(s2)))
-	{
-		if (i < ft_strlen(s1))
-			str[i] = s1[i];
-		else
-		{
-			str[i] = s2[f];
-			f++;
-		}
-		i++;
-	}
-	str[i] = '\0';
+	while (s1[++ls1])
+		newstr[ls1] = s1[ls1];
+	while (s2[++ls2])
+		newstr[ls1 + ls2] = s2[ls2];
+	newstr[ls1 + ls2] = '\0';
 	free(s1);
 	s1 = NULL;
-	return (str);
+	return (newstr);
 }
 
 size_t	ft_strlen(const char *str)
