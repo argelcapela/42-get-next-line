@@ -31,7 +31,7 @@ suicide:
 	@rm Makefile 2>/dev/null || true
 
 tester:
-	@make -C testadores/gnlTester 2>/dev/null || true
+	@make -C testadores/tester 2>/dev/null || true
 
 
 
