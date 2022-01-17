@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 03:05:41 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/15 04:34:10 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/17 12:44:46 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*get_next_line(int fd)
 	if (rest[fd] == 0)
 		rest[fd] = ft_strdup("");
 	result = read(fd, buffer, BUFFER_SIZE);
-	if (rest != NULL)
+	if (rest[fd] != NULL)
 		line = get_line_hold_rest(fd, &rest[fd], result, &buffer[0]);
 	else
 	{
