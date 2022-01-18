@@ -13,7 +13,9 @@
 <br><br>
 	
 # :sparkles: O que é a Get Next Line ?
-O Objetivo é criar uma função em C, dentro de algumas restrições, que leia uma linha de um Descritor de Arquivo ( é mais fácil entender na prática), em outras palavras , de um arquivo de texto. Cada vez que essa função get_next_line() é chamada, deve retornar a linha seguinte, até o final do arquivo. Excelente para praticar lógica, ponteiros e leaks(vazamentos) de memória. MUUITOS LEAKS DE MEMÓRIA.
+<b>Trata-se de uma função que lê uma linha de um arquivo. </b><br>
+
+Cada vez que a função é chamada, deve retornar a linha seguinte, até ler todo o arquivo. Excelente para praticar lógica, ponteiros e leaks(vazamentos) de memória.
 </div>
 
 <div class="col-12">
