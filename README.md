@@ -4,9 +4,13 @@
 -->
 
 <div class="hide-on-portfolio">
+
 <div align="center">
+	<p><i>"O Senhor ama o esforço porque o esforço traz recompensas que não viriam de outra forma."</i><br><b>Russel M. Nelson</b></p>
+<br><br>
 	<img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/img/galeria/portfolio_img_42-get-next-line.jpg?raw=true" width="250px">
 </div>
+<br><br>
 	
 # :sparkles: O que é a Get Next Line ?
 O Objetivo é criar uma função em C, dentro de algumas restrições, que leia uma linha de um Descritor de Arquivo ( é mais fácil entender na prática), em outras palavras , de um arquivo de texto. Cada vez que essa função get_next_line() é chamada, deve retornar a linha seguinte, até o final do arquivo. Excelente para praticar lógica, ponteiros e leaks(vazamentos) de memória. MUUITOS LEAKS DE MEMÓRIA.
@@ -208,10 +212,13 @@ $ make tester	#Executa o tester Tripoulle!
 <br><br>    
 	
 <h2 id="open-read-fd">Open, File Descriptor e Read</h2>
-<br>
-<i>#include <unistd.h>: read</i><br>
-<i>#include <fcntl.h>:  open, read, 'O_RDONLY'</i>
-<br>
+	
+```c
+#include <unistd.h> //read
+#include <fcntl.h>  //open, 'O_RDONLY'
+```
+	
+<br><br>
 <b>O que é o nosso queridinho e temido File Descriptor (Descritor de Arquivo)?</b>
 <p>É um número. Esse número identifica um arquivo aberto. Toda vez que um arquivo é aberto, é feito um registro em uma tabela, dos arquivos abertos do sistema, cada registro tem um ID, como em SQL, o File Descriptor é esse ID. Simples assim.</p>   
 
@@ -377,6 +384,7 @@ Stack Overflow
 	
 	
 <b>Encontrando Erros com o valgrind</b>
+	
 ```bash
 $ valgrind --leak-check=full --show-leak-kinds=all ./a.out 
 # exibe todos os leaks de memória
@@ -387,6 +395,7 @@ $ valgrind --leak-check=full --show-leak-kinds=all ./a.out
 
 <h2 id="test">Testes Automatizados</h2>
 <b>Tripouille</b>
+	
 ```bash
 $ git clone https://github.com/Tripouille/gnlTester
 ```
