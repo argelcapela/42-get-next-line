@@ -29,16 +29,19 @@ O Objetivo é criar uma função em C, dentro de algumas restrições, que leia 
 <br><br>
 <b> Depois de clonar o repositório, dentro da pasta test, pode-se executar esses comandos e testar rapidamente o projeto:</b><br><br>
 	
-```
+```bash
 # Clone o Repositório
+	
 $ git clone https://github.com/argelcapela/42-get-next-line
 
 # Entre na pasta 42-get-next-line depois em test
+	
 $ cd 42-get-next-line
 $ cd test
 
 # Você pode compilar o projeto manualmente ou
 # usar os comandos pré-definidos do Makefile:
+	
 $ make lin 	#Compila e executa no ambiente linux
 $ make lincat 	#Compila e executa no ambiente linux com o cat -e no retorno (quebras de linha serão exibidas com $)
 $ make win	#Compila e executa no ambiente windows
@@ -398,34 +401,14 @@ cd /other/dir && make
 
 <br><br>
 
-<b>Qual a merda da diferença entre esses char* e const??</b>
-<table>
-<thread>
-    <tr>
-        <td>Diferença</td>
-        <td>char*</td>
-        <td>const char*</td>
-        <td>char* const</td>
-        <td>const char* const</td>
-    </tr>
-</thead>
-<tbody>    
-    <tr>
-        <td>A Sequência apontada(string) precisa ser?</td>
-        <td>String normal ou Constante, tanto faz.</td>
-        <td>Constante(Imutável)</td>
-        <td>String normal(Mutável)</td>
-        <td>Constante(Imutável)</td>
-    </tr>
-    <tr>
-        <td>O ponteiro pode trocar a posição que ele está apontando?</td>
-        <td>Sim</td>
-        <td>Sim</td>
-        <td>Não</td>
-        <td>Não</td>
-    </tr>
-</tbody>    
-</table>		     
+<b>Qual a merda da diferença entre esses char* e const char*?</b>
+
+<li>char*: string normal, ponteiro que aponta para o primeiro caracter de uma sequência de caracteres, num bloco de memória.</li>
+<li>const char*: também é um string porém é uma string que não pode ser alterada de modo algum.</li>
+<li>char* const: Quando o const vem pra frente ele afeta o ponteiro, ou seja, esse ponteiro não pode mudar de posição.</li>
+<li>const char* const: Aqui se acumulam os dois casos, a string não pode ser alterada e nem o ponteiro de posição.</li>
+<i>Esses dois últimos casos são muito específicos e pouco usados!</i>
+		     
 <br><br>
 
 <h2 id="fontes">Fontes</h2>
