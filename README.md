@@ -92,12 +92,38 @@ $ make tester	#Executa o tester Tripoulle!
   </tr>
 </table>
 </div>
+	
 <div class="col-12">
-    
+	
 # :dart: Status do projeto:<br>
-<img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/icons/finalizado.png?raw=true" width="300px" height="230px">
+<img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/icons/finalizado.png?raw=true" width="250px" height="200px">
 </div>
+	
+<br>
 
+<div class="col-12">
+	
+# :clipboard: Nota:<br>
+<img src="#" width="250px" height="250px" alt="nota gnl">
+</div>
+	
+<br>
+
+<div class="col-12">
+	
+# :bug:	 Erros:<br>
+<p>Identificou um erro? Por favor me informe! ou fique a vontade para criar um *issue* aqui no Github e contribuir.</p>
+<p>Também fique a vontade para opinar, criticar, xingar, elogiar etc. Para mim é tudo a mesma coisa, fonte de crescimento pessoal. Eu não sei tudo, mas estou buscando ser um profissional 1% melhor a cada dia.</p>
+</div>
+	
+<div class="col-12">
+<p>Não esqueça de dar um ⭐️ se você gostou, ou se esse repositório te ajudou de alguma maneira, isso irá me ajudar muito! Obrigado, você é top! 😁👍</p>
+</div>
+	
+
+	
+	
+	
 <br><br><br>
 <br><br><br>
 <br><br>
