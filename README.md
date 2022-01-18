@@ -196,7 +196,6 @@ $ make tester	#Executa o tester Tripoulle!
 <br>
 	
 <h4 id="arrpon">Reforço Arrays</h4>
-<b>Arrays e strlen</b><br>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/arrays-pointers/relation-string-arrays-strlen.png?raw=true" width="100%">
 <br>	
 	
