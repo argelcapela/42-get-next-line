@@ -97,6 +97,8 @@ $ make tester	#Executa o tester Tripoulle!
     </td>
   </tr>
 </table>
+<br><br>
+<i>Obrigado Especial 🎁 a Welton, Krebs, João, Moacir e outros cadetes que me auxiliaram no entendimento dos procedimentos para desenvolver esse projeto. Vocês são tops! Quando eu crescer quero ser como vocês rsrs Sucesso! 👽✌😁👍 </i>
 </div>
 	
 <div class="col-12">
