@@ -75,8 +75,9 @@ make tester
 <li><a href="#test">Testes automatizados</a></li>
 <br>
 	
-<b>3) Extra</b>
+<b>3) Brinde</b>
 <li><a href="#step-by-step"> 42-get-next-line Passo a Passo!</a></li>
+<li><a href="#outras">Outras Coisas Legais!</a></li>
 <li><a href="#fontes">Fontes</a></li>
 </div>
 <br>	
@@ -113,7 +114,9 @@ make tester
 	
 </div>    
 <br><br>
-	
+
+<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
+<br><br>
 <h2 id="algoritmo">Algoritmo GNL?</h2>
 <img src="" alt="Algoritmo GNL!"> 
 <br><br>
@@ -370,7 +373,11 @@ git clone https://github.com/Tripouille/gnlTester
 <br>
 <br></br>
 
-<h2 id="extra">Extra</h2>
+<h2 id="step-by-step">42-get-next-line Passo a Passo</h2><br>
+<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
+<br><br>
+
+<h2 id="outras">Outras coisas legais!</h2>
 
 ```
 ulimit -n
@@ -378,12 +385,16 @@ ulimit -n
 
 <p>Informa a quantidade máxima de File Descriptors possível no sistema.</p>
 
+<br><br>
+
 ```
 @rm -rf *.o 2>/dev/null || true
 ```
 
 <li>@: esconde o comando.</li>
 <li>2>/dev/null || true: esconde os erros se houver.</li>
+
+<br><br>
 
 ```
 make -C /other/dir
@@ -393,6 +404,8 @@ make -C /other/dir
 cd /other/dir && make
 ```
 <p>Executa o Makefile de outro diretório.</p>
+
+<br><br>
 
 <b>Qual a merda da diferença entre esses char* e const??</b>
 <table>
@@ -421,13 +434,9 @@ cd /other/dir && make
         <td>Não</td>
     </tr>
 </tbody>    
-</table>
+</table>		     
 <br><br>
-      
-<h2 id="step-by-step">42-get-next-line Passo a Passo</h2><br>
-<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
-		     
-<br><br>
+
 <h2 id="fontes">Fontes</h2>
 <li><a href="https://en.wikipedia.org/wiki/Restrict">Restrict 1</a></li>
 <li><a href="https://www.youtube.com/watch?v=TBGu3NNpF1Q">Restrict 2</a></li>
