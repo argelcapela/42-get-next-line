@@ -24,36 +24,27 @@ O Objetivo é criar uma função em C, dentro de algumas restrições, que leia 
 
 # :rocket: Rodando o projeto:<br>
 <b>Links:</b>
-<li>Repositório Github: <a href="https://github.com/argelcapela/42_get_next_line">Link</a></li>
+<li>Repositório Github: <a href="https://github.com/argelcapela/42-get-next-line">Link</a></li>
 <li>Intra 42SP: <a href="https://projects.intra.42.fr/42cursus-get_next_line">Link</a></li>
 <br><br>
 <b> Depois de clonar o repositório, dentro da pasta test, pode-se executar esses comandos e testar rapidamente o projeto:</b><br><br>
 	
 ```
-make lin
-```
-<p>Compila e executa no ambiente linux</p>
+# Clone o Repositório
+$ git clone https://github.com/argelcapela/42-get-next-line
 
+# Entre na pasta 42-get-next-line depois em test
+$ cd 42-get-next-line
+$ cd test
+
+# Você pode compilar o projeto manualmente ou
+# usar os comandos pré-definidos do Makefile:
+$ make lin 	#Compila e executa no ambiente linux
+$ make lincat 	#Compila e executa no ambiente linux com o cat -e no retorno (quebras de linha serão exibidas com $)
+$ make win	#Compila e executa no ambiente windows
+$ make leak	#Compila e executa o valgrind, ambiente linux, com todas as principais flags para buscar leaks de memória!
+$ make tester	#Executa o tester Tripoulle!
 ```
-make lincat
-```
-<p>Compila e executa no ambiente linux com o cat -e no retorno (quebras de linha serão exibidas com $)</p>
-	
-```
-make win
-```
-<p>Compila e executa no ambiente windows</p>
-	
-```
-make leak
-```
-<p>Compila e executa o valgrind, ambiente linux, com todas as principais flags para buscar leaks de memória!</p>
-	
-```
-make tester
-```
-<p>Executa o tester Tripoulle!</p>
-		
 	
 </div>
 <br>
