@@ -70,8 +70,8 @@ $ make tester	#Executa o tester Tripoulle!
 <br>
 	
 <b>3) Brinde</b>
-<li><a href="#step-by-step"> 42-get-next-line Passo a Passo!</a></li>
-<li><a href="#outras">Outras Coisas Legais!</a></li>
+<li><a href="#step-by-step"> 42-get-next-line Passo a Passo</a></li>
+<li><a href="#outras">Outras Coisas Legais</a></li>
 <li><a href="#fontes">Fontes</a></li>
 </div>
 <br>	
@@ -243,7 +243,7 @@ printf("%d", file_descriptor);
 <br>
     
 <br>Exemplo</b>
-```
+```c
 	// lendo o arquivo de texto enemy.txt
 	int fd = open("enemy.txt", O_RDONLY);
 	
@@ -262,7 +262,7 @@ I w
 
 <h4 id="runtime-macro">Definir Macro em Tempo de Compilação</h4>
 
-```
+```bash
 $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
 ```
 
@@ -351,8 +351,8 @@ Stack Overflow
 	
 	
 <b>Encontrando Erros com o valgrind</b>
-```
-valgrind --leak-check=full --show-leak-kinds=all ./a.out 
+```bash
+$ valgrind --leak-check=full --show-leak-kinds=all ./a.out 
 # exibe todos os leaks de memória
 ```
 
@@ -361,8 +361,8 @@ valgrind --leak-check=full --show-leak-kinds=all ./a.out
 
 <h2 id="test">Testes Automatizados</h2>
 <b>Tripouille</b>
-```
-git clone https://github.com/Tripouille/gnlTester
+```bash
+$ git clone https://github.com/Tripouille/gnlTester
 ```
 <br>
 <br></br>
@@ -381,7 +381,7 @@ ulimit -n
 
 <br><br>
 
-```
+```bash
 @rm -rf *.o 2>/dev/null || true
 ```
 
@@ -390,11 +390,11 @@ ulimit -n
 
 <br><br>
 
-```
+```bash
 make -C /other/dir
 ```
 
-```
+```bash
 cd /other/dir && make
 ```
 <p>Executa o Makefile de outro diretório.</p>
