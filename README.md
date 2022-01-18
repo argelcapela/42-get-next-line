@@ -425,4 +425,8 @@ cd /other/dir && make
 <li><a href="https://stackoverflow.com/questions/25798977/returning-string-from-c-function">Returning String Without Memory Leak!</a></li> 
 <li><a href="https://pt.wikipedia.org/wiki/Redirecionamento_(computa%C3%A7%C3%A3o)">Redirecionamento</a></li> 
 <li><a href="https://superuser.com/questions/370575/how-to-run-make-file-from-any-directory">Executing Makefile in another directory</a></li> 
+<li><a href="https://qastack.com.br/programming/9834067/difference-between-char-and-const-char">Const 1</a></li> 
+<li><a href="https://pt.stackoverflow.com/questions/483461/diferen%C3%A7a-em-char-e-const-char-no-inicio-de-uma-fun%C3%A7%C3%A3o-em-c">Const 2</a></li> 
+
+
 </div>
