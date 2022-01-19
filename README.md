@@ -146,7 +146,9 @@ $ make tester	#Executa o tester Tripoulle!
 <a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
 <br><br>
 <h2 id="algoritmo">Algoritmo GNL?</h2>
-<img src="" alt="Algoritmo GNL!"> 
+<b>Fluxograma Miro</b>
+<img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/assets/42-get-next-line/fluxograma.jpg?raw=true" alt="Algoritmo GNL!"> 
+<a href="https://miro.com/app/board/uXjVOXd2zpY=/?invite_link_id=153572408505">Clique aqui para uma melhor visualização</a>
 <br><br>
 	
 <h2 id="static-variable">Variáveis Estáticas</h2>
