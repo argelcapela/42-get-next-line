@@ -400,7 +400,7 @@ $ valgrind --leak-check=full --show-leak-kinds=all ./a.out
 <b>Tripouille</b>
 	
 ```bash
-$ git clone https://github.com/Tripouille/gnlTester
+$ git clone https://github.com/Tripouille/gnlTester.git
 ```
 <br>
 <br></br>
