@@ -146,7 +146,28 @@ $ make tester	#Executa o tester Tripoulle!
 <a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
 <br><br>
 <h2 id="algoritmo">Algoritmo GNL?</h2>
-<b>Fluxograma Miro</b>
+<b>Passos Essências para se construir uma GNL</b>
+	<br>
+	<ol>
+<br>
+<i>Mandatório:</i>
+		<li>Ler BUFFER_SIZE caracteres usando a read() quantas vezes forem necessário</li>
+		<li>Eu devo usar malloc no meu buffer(função read) ou usar um array de tamanho fixo?</li>
+		<li>Encontrar o '\n'</li>
+		<li>Retornar o texto lido antes do \n</li>
+		<li>Guardar o texto lido depois do \n, caso haja</li>
+		<li>Utilizar o texto guardado na chamada anterior da GNL</li>
+		<li>Em quais casos a minha GNL deve retornar NULL?</li>
+		<br>
+<i>Bônus:</i>
+		<li>Quantos FILE DESCRIPTOR possíveis um sistema pode ter de uma vez?</li>
+		<li>Como a variável estática pode persistir a posição de um FD sem interferir a de outro?</li>
+		<li>😈Como dar FREE em todas as funções que usam MALLOC e eliminar os leaks de memória?😈</li>
+	</ol>
+<small>Adaptado de uma <a href="https://discord.com/channels/@me/895737928469340160/895737932240023622">thread</a> no slack da 42 mundial</small>
+<br><br>
+<b>Essa foi a minha lógica para construir a GNL, tendo como base os pontos acima:</b>
+<p>Não é a melhor de todas, mas foi a maneira que eu desenvolvi. #SempreAprendendo! 😁✌</p>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/assets/42-get-next-line/fluxograma.jpg?raw=true" alt="Algoritmo GNL!"> 
 <a href="https://miro.com/app/board/uXjVOXd2zpY=/?invite_link_id=153572408505">Clique aqui para uma melhor visualização</a>
 <br><br>
