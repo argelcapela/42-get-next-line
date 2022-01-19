@@ -4,17 +4,23 @@
 -->
 
 <div class="hide-on-portfolio">
+
 <div align="center">
+	<p><i>"O Senhor ama o esforço porque o esforço traz recompensas que não viriam de outra forma."</i><br><b>Russel M. Nelson</b></p>
+<br><br>
 	<img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/img/galeria/portfolio_img_42-get-next-line.jpg?raw=true" width="250px">
 </div>
+<br><br>
 	
-## :memo: Descrição:
-O Objetivo é criar uma função em C, dentro de algumas restrições, que leia uma linha de um Descritor de Arquivo ( é mais fácil entender na prática), em outras palavras , de um arquivo de texto. Cada vez que essa função get_next_line() é chamada, deve retornar a linha seguinte, até o final do arquivo. Excelente para praticar lógica, ponteiros e leaks(vazamentos) de memória. MUUITOS LEAKS DE MEMÓRIA.
+# :sparkles: O que é a Get Next Line ?
+<b>Trata-se de uma função que lê uma linha de um arquivo. </b><br>
+
+Cada vez que a função é chamada, deve retornar a linha seguinte, até ler todo o arquivo. Excelente para praticar lógica, ponteiros e leaks(vazamentos) de memória.
 </div>
 
 <div class="col-12">
 
-## :wrench: Tecnologias utilizadas:<br>
+# :wrench: Tecnologias utilizadas:<br>
 <div style="display: inline_block">
     <img align="center" alt="gel-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">
 
@@ -22,69 +28,63 @@ O Objetivo é criar uma função em C, dentro de algumas restrições, que leia 
 
 <div class="col-12">
 
-## :rocket: Rodando o projeto:<br>
+# :rocket: Rodando o projeto:<br>
 <b>Links:</b>
-<li>Repositório Github: <a href="https://github.com/argelcapela/42_get_next_line">Link</a></li>
+<li>Repositório Github: <a href="https://github.com/argelcapela/42-get-next-line">Link</a></li>
 <li>Intra 42SP: <a href="https://projects.intra.42.fr/42cursus-get_next_line">Link</a></li>
 <br><br>
 <b> Depois de clonar o repositório, dentro da pasta test, pode-se executar esses comandos e testar rapidamente o projeto:</b><br><br>
 	
-```
-make lin
-```
-<p>Compila e executa no ambiee linux</p>
+```bash
+# Clone o Repositório
+	
+$ git clone https://github.com/argelcapela/42-get-next-line
 
-```
-make lin
-```
-<p>Compila e executa no ambiee linux com o cat -e no retorno (quebras de linha serão exibidas com $)</p>
+# Entre na pasta 42-get-next-line depois em test
 	
-```
-make win
-```
-<p>Compila e executa no ambiente windows</p>
+$ cd 42-get-next-line
+$ cd test
+
+# Você pode compilar o projeto manualmente ou
+# usar os comandos pré-definidos do Makefile:
 	
+$ make lin 	#Compila e executa no ambiente linux
+$ make lincat 	#Compila e executa no ambiente linux com o cat -e no retorno (quebras de linha serão exibidas com $)
+$ make win	#Compila e executa no ambiente windows
+$ make leak	#Compila e executa o valgrind, ambiente linux, com todas as principais flags para buscar leaks de memória!
+$ make tester	#Executa o tester Tripoulle!
 ```
-make leak
-```
-<p>Compila e executa o valgrind, ambiente linux, com todas as principais flags para buscar leaks de memória!</p>
-	
-```
-make tester
-```
-<p>Executa o tester Tripoulle!</p>
-		
 	
 </div>
 <br>
 <div class="col-12">
     
-## :boom: O que eu aprendi e como foi desenvolvido esse projeto?<br>
-<h4>Indice:</h4>
-<b>1) O que foi preciso para fazer a GNL ler linha por linha?</b><br>
-<li><a href="#algoritmo">Qual a lógica (Algoritmo) da minha GNL?</a></li>
+# :pushpin: O que eu aprendi e como foi desenvolvido esse projeto?<br>
+<b>1) Fazendo a GNL ler linha por linha</b><br>
+<li><a href="#algoritmo">Lógica GNL</a></li>
 <li><a href="#static-variable">Variáveis Estáticas</a></li>
-<li><a href="#arrpon">Reforço Arrays e Ponteiros</a></li>
+<li><a href="#arrpon">Arrays e Ponteiros</a></li>
 <li><a href="#stack-heap">Divisões da Memória</a></li>
 <li><a href="#open-read-fd">Open, File Descriptor, Read</a></li>
 <li><a href="#runtime-macro">Definir Macro em Tempo de Compilação</a></li>
 <li><a href="#debug">Como usar o Debugger (GDB/VSCODE)</a></li>
 <br>
 	
-<b>2) Resolvendo Leaks, Norma e Executando testers?</b>
+<b>2) Leaks e Testers</b>
 <li><a href="#leaks">Erros de Memória</a></li>
-<li><a href="#test">Testes automatizados?</a></li>
+<li><a href="#test">Testes automatizados</a></li>
 <br>
 	
-<b>3) Confira a Playlist GNL e muito mais!</b>
-<li><a href="#step-by-step">42-get-next-line Passo a Passo!</a></li>
+<b>3) Brinde</b>
+<li><a href="#step-by-step"> 42-get-next-line Passo a Passo</a></li>
+<li><a href="#outras">Outras Coisas Legais</a></li>
 <li><a href="#fontes">Fontes</a></li>
 </div>
 <br>	
 	
 <div class="col-12">
 	
-## :handshake: Colaboradores:<br>
+# :handshake: Colaboradores:<br>
 <table>
   <tr>
     <td align="center">
@@ -97,33 +97,69 @@ make tester
     </td>
   </tr>
 </table>
+<br><br>
+<i>Obrigado Especial 🎁 a Welton, Krebs, João, Moacir e outros cadetes que me auxiliaram no entendimento dos procedimentos para desenvolver esse projeto. Vocês são tops! Quando eu crescer quero ser como vocês rsrs Sucesso! 👽✌😁👍 </i>
 </div>
+	
 <div class="col-12">
-    
-## :dart: Status do projeto:<br>
-<img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/icons/finalizado.png?raw=true" width="300px" height="230px">
+	
+# :dart: Status do projeto:<br>
+<img src="https://github.com/argelcapela/argelcapela.rf.gd/blob/main/assets/icons/finalizado.png?raw=true" width="250px" height="200px">
 </div>
+	
+<br>
 
+<div class="col-12">
+	
+# :clipboard: Nota:<br>
+<img src="#" width="250px" height="250px" alt="nota gnl">
+</div>
+	
+<br>
+
+<div class="col-12">
+	
+# :bug:	 Erros:<br>
+<p>Identificou um erro? Por favor me informe! ou fique a vontade para criar um *issue* aqui no Github e contribuir.</p>
+<p>Também fique a vontade para opinar, criticar, xingar, elogiar etc. Para mim é tudo a mesma coisa, fonte de crescimento pessoal. Eu não sei tudo, mas estou buscando ser um profissional 1% melhor a cada dia.</p>
+</div>
+	
+<div class="col-12">
+<p>Não esqueça de dar um ⭐️ se você gostou, ou se esse repositório te ajudou de alguma maneira, isso irá me ajudar muito! Obrigado, você é top! 😁👍</p>
+</div>
+	
+
+	
+	
+	
 <br><br><br>
 <br><br><br>
 <br><br>
 	
 <div align="center">
-:crown::trollface: 
-<hr>
+
+# :crown: 
+	
 </div>    
-<br><br>	
+<br><br>
+
+<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
+<br><br>
+<h2 id="algoritmo">Algoritmo GNL?</h2>
+<img src="" alt="Algoritmo GNL!"> 
+<br><br>
+	
 <h2 id="static-variable">Variáveis Estáticas</h2>
 <b>O que são Variáveis Estáticas ,pelo amor do pai ?</b>
 <p>Uma variável que você coloca um valor nela, e esse valor, fica ali, não importa o que aconteça, <u>até o programa acabar, ou até você atribuir outro valor aquela variável.</u></p>
-<br><br>
+<br>
     
 <b>Coisas relevantes que eu deva saber dessa jóssa?</b>
 <ul>
     <li>Ela começa valendo 0, mesmo sem nada ser atribuído.</li>
     <li>A variável estática é inicializada somente uma vez durante o programa, não importa se uma função passa várias vezes pela linha que declara a variável estática, depois da primeira vez que essa linha é executada, nas outras vezes ela será "ignorada".</li>
 </ul>
-<br><br>
+<br>
     
 <b>Bora, ver algumas diferenças entre V. Estáticas e Locais? Rapidão...</b>
 <table>
@@ -161,15 +197,11 @@ make tester
 
 </tbody>    
 </table>
-<br><br>
-<h4 id="arrpon">Reforço Arrays e Ponteiros</h4>
+<br>
 	
-
-<b>Relações importantes entre strlen,strings e arrays</b><br>
+<h4 id="arrpon">Reforço Arrays</h4>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/arrays-pointers/relation-string-arrays-strlen.png?raw=true" width="100%">
-	
-<br><br>	
-	
+<br>	
 	
 <h4 id="stack-heap">Divisões da Memória</h4>
 <b>Tipos de Alocações de Memória das Variáveis:</b><br>
@@ -183,9 +215,13 @@ make tester
 <br><br>    
 	
 <h2 id="open-read-fd">Open, File Descriptor e Read</h2>
-<i>#include <unistd.h>: read</i>
-<i>#include <fcntl.h>:  open, read, 'O_RDONLY'</i>
-<br>
+	
+```c
+#include <unistd.h> //read
+#include <fcntl.h>  //open, 'O_RDONLY'
+```
+	
+<br><br>
 <b>O que é o nosso queridinho e temido File Descriptor (Descritor de Arquivo)?</b>
 <p>É um número. Esse número identifica um arquivo aberto. Toda vez que um arquivo é aberto, é feito um registro em uma tabela, dos arquivos abertos do sistema, cada registro tem um ID, como em SQL, o File Descriptor é esse ID. Simples assim.</p>   
 
@@ -243,7 +279,7 @@ printf("%d", file_descriptor);
 <br>
     
 <br>Exemplo</b>
-```
+```c
 	// lendo o arquivo de texto enemy.txt
 	int fd = open("enemy.txt", O_RDONLY);
 	
@@ -262,7 +298,7 @@ I w
 
 <h4 id="runtime-macro">Definir Macro em Tempo de Compilação</h4>
 
-```
+```bash
 $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
 ```
 
@@ -276,19 +312,19 @@ $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
 <br><br>
 
 <h2 id="leaks">Resolvendo Erros de Memória</h2>
-<b id="debug>Debugando</b>
-<li><b>Instalação do Compilador:</b></li>
-<li><p>Para que o Debugger Funcione corretamente é necessário o uso da FLAG -g no gcc.</p></li>
+<b id="debug">Debugando</b>
+	
+<li>Instalar MinGW, C Run and Compiler, and C/C++ IntelliSense (VSCode Extension) </li>
+<li>Para que o Debugger Funcione corretamente é necessário o uso da FLAG -g no gcc.</li>
 <li>F10 -> Avança o código para frente.</li>
 <li>F11 -> Entra dentro de uma função, quando está em cima dela.</li>
 <li>SHIFT + F11 -> Sai de uma função.</li>
-
-</p>
-
-
-
+<br><br>
+	
 <b>Que parada é essa de Leak de Memória?</b>
 <p>Ocorre quando você aloca dinâmicamente memória (malloc, ft_calloc) e não libera quando essa memória não é mais necessária.</p>
+<i>Acostume-se a prestar atenção em todo MALLOC que você utilizar, sempre dê FREE quando essa memória não for mais necessária.</i>
+	
 <br><br>
 
 <b>Erros Chatos e Frequentes</b>
@@ -302,9 +338,7 @@ $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
 <tr>
 <td>
 	Segmentation Fault<br>
-	ou<br>
 	SIGSEGV<br>
-	ou<br>
 	Core Dump
 </td>
 <td>
@@ -350,99 +384,32 @@ Stack Overflow
 </tr>
 </table>
 <br><br>
+	
+	
 <b>Encontrando Erros com o valgrind</b>
+	
+```bash
+$ valgrind --leak-check=full --show-leak-kinds=all ./a.out 
+# exibe todos os leaks de memória
 ```
-valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out     
-```
-<li><b>--leak-check=full</b>: ...</li>
-<li><b>--show-leak-kinds=all</b>: ...</li>
-<li><b>--track-origins=yes</b>: ...</li>
-<br><br>
 
-<h2 id="algoritmo">Algoritmo GNL?</h2>
 <br><br>
 
 
 <h2 id="test">Testes Automatizados</h2>
-
 <b>Tripouille</b>
-```
-git clone https://github.com/Tripouille/gnlTester
+	
+```bash
+$ git clone https://github.com/Tripouille/gnlTester
 ```
 <br>
-<table>
-	<tr>
-		<td>Nome do Teste:</td>
-		<td>Pra ta certo, sua GNL tem que retornar:</td>
-	</tr>
-	<tr>
-		<td>invalid fd</td>
-		<td>(NULL)</td>
-	</tr>
-	<tr>
-		<td>41_no_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>41_with_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>42_no_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>42_with_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>43_no_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>43_with_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>alternate_line_nl_no_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>alternate_line_nl_with_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>big_line_no_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>big_line_with_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>empty</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>multiple_line_no_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>multiple_line_with_nl</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>multiple_nlx5</td>
-		<td>Descrição</td>
-	</tr>
-	<tr>
-		<td>nl</td>
-		<td>Descrição</td>
-	</tr>
-</table>
 <br></br>
 
-<h2 id="extra">Extra</h2>
+<h2 id="step-by-step">42-get-next-line Passo a Passo</h2><br>
+<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
+<br><br>
+
+<h2 id="outras">Outras coisas legais!</h2>
 
 ```
 ulimit -n
@@ -450,56 +417,38 @@ ulimit -n
 
 <p>Informa a quantidade máxima de File Descriptors possível no sistema.</p>
 
-```
+<br><br>
+
+```bash
 @rm -rf *.o 2>/dev/null || true
 ```
 
 <li>@: esconde o comando.</li>
 <li>2>/dev/null || true: esconde os erros se houver.</li>
 
-```
+<br><br>
+
+```bash
 make -C /other/dir
 ```
 
-```
+```bash
 cd /other/dir && make
 ```
 <p>Executa o Makefile de outro diretório.</p>
 
-<b>Qual a merda da diferença entre esses char* e const??</b>
-<table>
-<thread>
-    <tr>
-        <td>Diferença</td>
-        <td>char*</td>
-        <td>const char*</td>
-        <td>char* const</td>
-        <td>const char* const</td>
-    </tr>
-</thead>
-<tbody>    
-    <tr>
-        <td>A Sequência apontada(string) precisa ser?</td>
-        <td>String normal ou Constante, tanto faz.</td>
-        <td>Constante(Imutável)</td>
-        <td>String normal(Mutável)</td>
-        <td>Constante(Imutável)</td>
-    </tr>
-    <tr>
-        <td>O ponteiro pode trocar a posição que ele está apontando?</td>
-        <td>Sim</td>
-        <td>Sim</td>
-        <td>Não</td>
-        <td>Não</td>
-    </tr>
-</tbody>    
-</table>
 <br><br>
-      
-<h2 id="step-by-step">42-get-next-line Passo a Passo</h2><br>
-<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
+
+<b>Qual a merda da diferença entre esses char* e const char*?</b>
+
+<li>char*: string normal, ponteiro que aponta para o primeiro caracter de uma sequência de caracteres, num bloco de memória.</li>
+<li>const char*: também é um string porém é uma string que não pode ser alterada de modo algum.</li>
+<li>char* const: Quando o const vem pra frente ele afeta o ponteiro, ou seja, esse ponteiro não pode mudar de posição.</li>
+<li>const char* const: Aqui se acumulam os dois casos, a string não pode ser alterada e nem o ponteiro de posição.</li>
+<i>Esses dois últimos casos são muito específicos e pouco usados!</i>
 		     
 <br><br>
+
 <h2 id="fontes">Fontes</h2>
 <li><a href="https://en.wikipedia.org/wiki/Restrict">Restrict 1</a></li>
 <li><a href="https://www.youtube.com/watch?v=TBGu3NNpF1Q">Restrict 2</a></li>
@@ -514,8 +463,8 @@ cd /other/dir && make
 <li><a href="https://stackoverflow.com/questions/25798977/returning-string-from-c-function">Returning String Without Memory Leak!</a></li> 
 <li><a href="https://pt.wikipedia.org/wiki/Redirecionamento_(computa%C3%A7%C3%A3o)">Redirecionamento</a></li> 
 <li><a href="https://superuser.com/questions/370575/how-to-run-make-file-from-any-directory">Executing Makefile in another directory</a></li> 
-<br>
-<li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
-<li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
-<li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
+<li><a href="https://qastack.com.br/programming/9834067/difference-between-char-and-const-char">Const 1</a></li> 
+<li><a href="https://pt.stackoverflow.com/questions/483461/diferen%C3%A7a-em-char-e-const-char-no-inicio-de-uma-fun%C3%A7%C3%A3o-em-c">Const 2</a></li> 
+
+
 </div>
