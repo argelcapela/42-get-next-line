@@ -6,7 +6,7 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 02:58:24 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/15 04:33:28 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/19 18:17:08 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-
 char	*ft_strrchr(const char *str, int ch);
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(const char *str);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-int		index_first_bn(char *str);
-char	*clean_leak(char **ptr);
 char	*get_next_line(int fd);
-char	*get_line_hold_rest(int fd, char **rest,
-			int result, char *buffer);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: acapela- < acapela-@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 03:05:41 by acapela-          #+#    #+#             */
-/*   Updated: 2022/01/15 04:34:03 by acapela-         ###   ########.fr       */
+/*   Updated: 2022/01/19 18:15:45 by acapela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"get_next_line.h"
 
-int	index_first_bn(char *str)
+static int	index_first_bn(char *str)
 {
 	int	i;
 
@@ -22,14 +22,14 @@ int	index_first_bn(char *str)
 	return (i);
 }
 
-char	*clean_leak(char **ptr)
+static char	*clean_leak(char **ptr)
 {
 	free (*ptr);
 	*ptr = NULL;
 	return (*ptr);
 }
 
-char	*get_line_hold_rest(int fd, char **rest,
+static char	*get_line_hold_rest(int fd, char **rest,
 int result, char *buffer){
 	char	*line;
 	char	*tmp_rest;
@@ -60,7 +60,7 @@ char	*get_next_line(int fd)
 {
 	static char	*rest;
 	char		*buffer;
-	int		result;
+	int			result;
 	char		*line;
 
 	buffer = malloc(BUFFER_SIZE + 1);

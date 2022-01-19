@@ -501,7 +501,6 @@ cd /other/dir && make
 		     
 <br><br>
 <h2 id="fontes">Fontes</h2>
-<li><a href="https://docs.google.com/spreadsheets/d/1Ewfq-R65Ymko8qteJmLQJcv46l1OeaD-m8QBJ4s8TEs/edit#gid=0">PLANILHA MESTRA DOS CADETES!</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Restrict">Restrict 1</a></li>
 <li><a href="https://www.youtube.com/watch?v=TBGu3NNpF1Q">Restrict 2</a></li>
 <li><a href="https://godbolt.org/">Explore o Assembly de seus códigos em C</a></li> 
@@ -519,5 +518,4 @@ cd /other/dir && make
 <li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
 <li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
 <li><a href="https://stackoverflow.com/questions/3148492/suppress-messages-in-make-clean-makefile-silent-remove">Hide erros executing command</a></li> 
-
 </div>
