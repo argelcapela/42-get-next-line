@@ -54,13 +54,44 @@ $ make win	#Compila e executa no ambiente windows
 $ make leak	#Compila e executa o valgrind, ambiente linux, com todas as principais flags para buscar leaks de memória!
 $ make tester	#Executa o tester Tripoulle!
 ```
+<br>
+<b> Ou se preferir pode testar manualmente criando um main próprio, a seguir temos um exemplo de main para testar a GNL:</b><br><br>
+
+```
+#include "get_next_line.h"
+#include <stdio.h>
+
+int main(void)
+{
+	// test #1
+	int fd = open("arquivo a ser lido", O_RDONLY);
+	char *resposta = get_next_line(fd);
+
+	while(resposta)
+	{
+		printf("%s", resposta);
+		free(resposta);
+		resposta = get_next_line(fd);
+	}
+
+	return(0);
+}
+
+```
+	
+<br>
+😎compilando...<br>
+	
+```bash
+$ gcc get_next_line.c get_next_line.h get_next_line_utils.c main.c && ./a.out	
+```
 	
 </div>
 <br>
 <div class="col-12">
     
 # :pushpin: O que eu aprendi e como foi desenvolvido esse projeto?<br>
-<b>1) Fazendo a GNL ler linha por linha</b><br>
+<b>1) Conhecimento adquiridos para fazer a função ler linha por linha</b><br>
 <li><a href="#algoritmo">Lógica GNL</a></li>
 <li><a href="#static-variable">Variáveis Estáticas</a></li>
 <li><a href="#arrpon">Arrays e Ponteiros</a></li>
@@ -234,7 +265,6 @@ $ make tester	#Executa o tester Tripoulle!
 <br>
 <b>Como a memória é dividida e organizada?:</b><br><br>
 <img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/stack-heap/organizacao_da_memoria.png?raw=true">
-<p>Variáveis locais são guardadas na Stack. <br> Variáveis dinâmicamente alocadas são guardadas na Heap, <i>o tempo de alocação é mais demorado que na Stack. Think of it, quando for projetar programas. Se usar muito Malloc o programa será super lento, existem várias técnicas para gerenciamento de memória, que torna a alocação dinâmica muito mais rápida. </i><br>Variáveis Estáticas são guardadas em outro lugar, nem Heap nem Stack, mas isso é história pra outro dia. XD!</p>
 <br><br>    
 	
 <h2 id="open-read-fd">Open, File Descriptor e Read</h2>
@@ -339,6 +369,7 @@ $ gcc -D NOME_CONSTANTE=3 fd01.c && ./a.exe
 	
 <li>Instalar MinGW, C Run and Compiler, and C/C++ IntelliSense (VSCode Extension) </li>
 <li>Para que o Debugger Funcione corretamente é necessário o uso da FLAG -g no gcc.</li>
+<li>F5, configure o arquivo.json, coloque o endereço de onde está o arquivo .out, e em baixo, coloque o endereço do arquivo gdb.exe, geralmente: C:\\MinGW\\bin\\gdb.exe.</li>
 <li>F10 -> Avança o código para frente.</li>
 <li>F11 -> Entra dentro de uma função, quando está em cima dela.</li>
 <li>SHIFT + F11 -> Sai de uma função.</li>
@@ -399,7 +430,7 @@ Stack Overflow
 </td>
 <td>
 	<ol>
-		<li><Malloca tanta memória e/ou cria tantas variáveis que o programa atinge o limite de memória disponível, crasheando!.</li>
+		<li>Malloca tanta memória e/ou cria tantas variáveis que o programa atinge o limite de memória disponível, crasheando!.</li>
 		<li>Atinge o limite de memória da Stack ao invéz de alocar dinâmicamente na Heap.</li>
 	</ol>
 </td>
