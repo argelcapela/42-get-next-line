@@ -143,7 +143,7 @@ $ gcc get_next_line.c get_next_line.h get_next_line_utils.c main.c && ./a.out
 <div class="col-12">
 	
 # :clipboard: Nota:<br>
-<img src="#" width="250px" height="250px" alt="nota gnl">
+<img src="https://github.com/argelcapela/42-trilha-de-fundamentos/blob/main/assets/nota-125.png?raw=true" width="150px" height="150px" alt="nota gnl">
 </div>
 	
 <br>
