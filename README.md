@@ -29,35 +29,25 @@ Cada vez que a função é chamada, deve retornar a linha seguinte, até ler tod
 <div class="col-12">
 
 # 🚀 Rodando o projeto:<br>
-<b>Links:</b>
-<li>Repositório Github: <a href="https://github.com/argelcapela/42-get-next-line">Link</a></li>
-<li>Intra 42SP: <a href="https://projects.intra.42.fr/42cursus-get_next_line">Link</a></li>
-<br><br>
-<b> Depois de clonar o repositório, dentro da pasta test, pode-se executar esses comandos e testar rapidamente o projeto:</b><br><br>
 	
 ```bash
-# Clone o Repositório
+# 1) Clone o projeto
+$ git clone https://github.com/argelcapela/42-get-next-line.git 
 	
-$ git clone https://github.com/argelcapela/42-get-next-line
+# 2) Entre na pasta 'app'
+$ cd app	
+	
+# 3) Crie uma função main dentro de get_next_line.c ou um arquivo main.c dentro da pasta app, e compile tudo junto.
+$ touch main.c
+$ gcc get_next_line.c get_next_line.h get_next_line_utils.c main.c
 
-# Entre na pasta 42-get-next-line depois em test
+# 4) Execute
+$ ./a.out
 	
-$ cd 42-get-next-line
-$ cd test
-
-# Você pode compilar o projeto manualmente ou
-# usar os comandos pré-definidos do Makefile:
-	
-$ make lin 	#Compila e executa no ambiente linux
-$ make lincat 	#Compila e executa no ambiente linux com o cat -e no retorno (quebras de linha serão exibidas com $)
-$ make win	#Compila e executa no ambiente windows
-$ make leak	#Compila e executa o valgrind, ambiente linux, com todas as principais flags para buscar leaks de memória!
-$ make tester	#Executa o tester Tripoulle!
 ```
-<br>
-<b> Ou se preferir pode testar manualmente criando um main próprio, a seguir temos um exemplo de main para testar a GNL:</b><br><br>
 
-```
+```C
+/* main.c */
 #include "get_next_line.h"
 #include <stdio.h>
 
@@ -79,37 +69,13 @@ int main(void)
 
 ```
 	
-<br>
-😎compilando...<br>
-	
-```bash
-$ gcc get_next_line.c get_next_line.h get_next_line_utils.c main.c && ./a.out	
-```
-	
 </div>
 <br>
 <div class="col-12">
     
 # 📌 O que eu aprendi e como foi desenvolvido esse projeto?<br>
-<b>1) Conhecimento adquiridos para fazer a função ler linha por linha</b><br>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#algoritmo">Lógica GNL</a></li>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#static-variable">Variáveis Estáticas</a></li>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#arrpon">Arrays e Ponteiros</a></li>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#stack-heap">Divisões da Memória</a></li>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#open-read-fd">Open, File Descriptor, Read</a></li>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#runtime-macro">Definir Macro em Tempo de Compilação</a></li>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#debug">Como usar o Debugger (GDB/VSCODE)</a></li>
-<br>
-	
-<b>2) Leaks e Testers</b>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#leaks">Erros de Memória</a></li>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#test">Testes automatizados</a></li>
-<br>
-	
-<b>3) Brinde</b>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#step-by-step"> 42-get-next-line Passo a Passo</a></li>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#outras">Outras Coisas Legais</a></li>
-<li><a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md#fontes">Fontes</a></li>
+EM BREVE AGUARDE
+
 </div>
 <br>	
 	
@@ -157,28 +123,4 @@ $ gcc get_next_line.c get_next_line.h get_next_line_utils.c main.c && ./a.out
 	
 <div class="col-12">
 <p>Não esqueça de dar um ⭐️ se você gostou, ou se esse repositório te ajudou de alguma maneira, isso irá me ajudar muito! Obrigado, você é top! 😁👍</p>
-</div>
-	
-
-	
-	
-	
-<br><br><br>
-<br><br><br>
-<br><br>
-	
-<div align="center">
-
-# 👑
-	
-</div>    
-<br><br>
-
-<a href="https://youtu.be/D9G1VOjN_84"><img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" width="100%"></a>
-<div align="center">
-<br><br>
-<i>Fique a vontade para conferir meu estudo sobre a 42-get-next-line, clicando no icone bonitinho abaixo. <br> Ah! Se quiser deixe um comentário também: 😎</i><br><br>
-<a href="https://github.com/argelcapela/42-get-next-line/blob/main/42-get-next-line.md" target="_BLANK"><img src="https://i.imgur.com/z4ULooG.png" alt="conferir estudo"></a>
-<br>
-</div>   
 </div>
